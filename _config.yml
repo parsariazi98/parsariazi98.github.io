@@ -1,0 +1,32 @@
+# Site settings
+title: Parsa Riazi Bakhshayesh
+description: An Artificial Intelligence enthusiast !
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: jekyll-theme-minimal # choose a Jekyll theme for your portfolio
+plugins:
+  - jekyll-feed # add a feed plugin if needed
+  - jekyll-sitemap # add a sitemap plugin if needed
+
+# Navigation settings
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about
+  - title: Projects
+    url: /projects
+  - title: Education
+    url: /education
+
+# Social media links
+social:
+  - title: GitHub
+    url: https://github.com/parsariazi98
+  - title: LinkedIn
+    url: https://linkedin.com/in/parsa-riazi-bakhshayesh
+  # Add more social media links as needed
+
+# Customize other settings as per your requirements
