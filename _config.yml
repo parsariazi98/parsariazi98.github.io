@@ -1,7 +1,7 @@
 # Site settings
 title: Parsa Riazi Bakhshayesh
 description: An Artificial Intelligence enthusiast !
-logo: /assets/profile_photo.jpeg
+logo: /assets/profile_photo.png
 theme: jekyll-theme-minimal # choose a Jekyll theme for your portfolio
 remote_theme: pages-themes/minimal@v0.2.0
 plugins:

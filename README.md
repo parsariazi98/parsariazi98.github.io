@@ -36,3 +36,22 @@
 [[5] Navid H.Z. Abedini, Amir Nourani*, Mehdi Mohseni, Nesa Hosseini, Sepideh Norouzi, Parsa Riazi Bakhshayesh. “Effects of Geomet- rical and Processing Parameters on Mechanical Properties of Auxetic Polyurethane Foams,” SN Applied Sciences, vol. 4, 2022, p. 162. ](https://link.springer.com/article/10.1007/s42452-022-05042-8#citeas)
 
 ## Programming Skills
+### Python
+![Python Logo](https://www.python.org/static/community_logos/python-logo.png)
+Skill Level: Advanced
+import matplotlib.pyplot as plt
+
+# Define the programming skills and their skill levels
+skills = ['Python', 'Java', 'C++', 'JavaScript']
+skill_levels = [5, 3, 4, 2]  # Replace with the actual skill levels
+
+# Create a bar chart
+plt.bar(skills, skill_levels)
+
+# Add labels and title
+plt.xlabel('Programming Language')
+plt.ylabel('Skill Level')
+plt.title('Programming Skills')
+
+# Display the chart
+plt.show()
