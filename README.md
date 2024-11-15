@@ -37,21 +37,44 @@
 
 ## Programming Skills
 ### Python
-![Python Logo](https://www.python.org/static/community_logos/python-logo.png)
+<img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo" width="200" height="200">
 Skill Level: Advanced
-import matplotlib.pyplot as plt
+<canvas id="skillChart" width="400" height="300"></canvas>
+<script>
+    // Get the canvas element
+    const canvas = document.getElementById('skillChart');
+    const ctx = canvas.getContext('2d');
 
-# Define the programming skills and their skill levels
-skills = ['Python', 'Java', 'C++', 'JavaScript']
-skill_levels = [5, 3, 4, 2]  # Replace with the actual skill levels
+    // Define the skill levels
+    const skills = [
+        { name: 'Python', level: 90 },
+        { name: 'JavaScript', level: 80 },
+        { name: 'HTML', level: 70 },
+        { name: 'CSS', level: 60 },
+        // Add more skills as needed
+    ];
 
-# Create a bar chart
-plt.bar(skills, skill_levels)
+    // Set the bar width and spacing
+    const barWidth = 40;
+    const barSpacing = 20;
 
-# Add labels and title
-plt.xlabel('Programming Language')
-plt.ylabel('Skill Level')
-plt.title('Programming Skills')
+    // Set the starting position for the first bar
+    let x = 50;
 
-# Display the chart
-plt.show()
+    // Loop through the skills and draw the bars
+    skills.forEach((skill) => {
+        const barHeight = skill.level * 2; // Adjust the scale as needed
+
+        // Draw the bar
+        ctx.fillStyle = 'blue'; // Set the bar color
+        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+
+        // Draw the skill name
+        ctx.fillStyle = 'black'; // Set the text color
+        ctx.font = '14px Arial'; // Set the font
+        ctx.fillText(skill.name, x, canvas.height - barHeight - 10);
+
+        // Update the x position for the next bar
+        x += barWidth + barSpacing;
+    });
+</script>
