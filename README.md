@@ -54,27 +54,27 @@ Skill Level: Advanced
         // Add more skills as needed
     ];
 
-    // Set the bar width and spacing
-    const barWidth = 40;
-    const barSpacing = 20;
+    // Set the bar height and spacing
+    const barHeight = 20;
+    const barSpacing = 5;
 
     // Set the starting position for the first bar
-    let x = 50;
+    let y = 50;
 
     // Loop through the skills and draw the bars
     skills.forEach((skill) => {
-        const barHeight = skill.level * 2; // Adjust the scale as needed
+        const barWidth = skill.level * 2; // Adjust the scale as needed
 
         // Draw the bar
         ctx.fillStyle = 'blue'; // Set the bar color
-        ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+        ctx.fillRect(0, y, barWidth, barHeight);
 
         // Draw the skill name
         ctx.fillStyle = 'black'; // Set the text color
-        ctx.font = '14px Arial'; // Set the font
-        ctx.fillText(skill.name, x, canvas.height - barHeight - 10);
+        ctx.font = '10px Arial'; // Set the font
+        ctx.fillText(skill.name, barWidth + 10, y + barHeight - 5);
 
-        // Update the x position for the next bar
-        x += barWidth + barSpacing;
+        // Update the y position for the next bar
+        y += barHeight + barSpacing;
     });
 </script>
