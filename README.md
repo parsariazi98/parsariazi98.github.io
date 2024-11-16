@@ -35,10 +35,8 @@
 
 [[5] Navid H.Z. Abedini, Amir Nourani*, Mehdi Mohseni, Nesa Hosseini, Sepideh Norouzi, Parsa Riazi Bakhshayesh. “Effects of Geomet- rical and Processing Parameters on Mechanical Properties of Auxetic Polyurethane Foams,” SN Applied Sciences, vol. 4, 2022, p. 162. ](https://link.springer.com/article/10.1007/s42452-022-05042-8#citeas)
 
-## Programming Skills
-### Python
-<img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo" width="20" height="20">
-Skill Level: Advanced
+## Skills
+### Programming
 <canvas id="skillChart" width="400" height="300"></canvas>
 <script>
     // Get the canvas element
@@ -48,9 +46,8 @@ Skill Level: Advanced
     // Define the skill levels
     const skills = [
         { name: 'Python', level: 90 },
-        { name: 'JavaScript', level: 80 },
-        { name: 'HTML', level: 70 },
-        { name: 'CSS', level: 60 },
+        { name: 'MATLAB', level: 80 },
+        { name: 'C/C++', level: 70 },
         // Add more skills as needed
     ];
 
@@ -59,14 +56,14 @@ Skill Level: Advanced
     const barSpacing = 5;
 
     // Set the starting position for the first bar
-    let y = 50;
+    let y = 10;
 
     // Loop through the skills and draw the bars
     skills.forEach((skill) => {
-        const barWidth = skill.level * 2; // Adjust the scale as needed
+        const barWidth = skill.level * 1; // Adjust the scale as needed
 
         // Draw the bar
-        ctx.fillStyle = 'blue'; // Set the bar color
+        ctx.fillStyle = 'green'; // Set the bar color
         ctx.fillRect(0, y, barWidth, barHeight);
 
         // Draw the skill name
