@@ -37,7 +37,7 @@
 
 ## Programming Skills
 ### Python
-<img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo" width="200" height="200">
+<img src="https://www.python.org/static/community_logos/python-logo.png" alt="Python Logo" width="20" height="20">
 Skill Level: Advanced
 <canvas id="skillChart" width="400" height="300"></canvas>
 <script>
