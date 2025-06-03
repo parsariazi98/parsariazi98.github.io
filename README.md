@@ -33,45 +33,7 @@
 
 [[4] E. Tahvilian, E. Partovi, M. Ejtehadi, Parsa Riazi Bakhshayesh, Saeed Behzadipour*. “Accuracy improvement in simple and complex Human Activity Recognition using a CNN-BiLSTM multi-task deep neural network,” The 8th Iranian Conference on Signal Processing andIntelligent Systems (ICSPIS 2022), Dec 2022](https://doi.org/10.1109/ICSPIS56952.2022.10043933)
 
-[[5] Navid H.Z. Abedini, Amir Nourani*, Mehdi Mohseni, Nesa Hosseini, Sepideh Norouzi, Parsa Riazi Bakhshayesh. “Effects of Geomet- rical and Processing Parameters on Mechanical Properties of Auxetic Polyurethane Foams,” SN Applied Sciences, vol. 4, 2022, p. 162. ](https://link.springer.com/article/10.1007/s42452-022-05042-8#citeas)
+[[5] Navid H.Z. Abedini, Amir Nourani*, Mehdi Mohseni, Nesa Hosseini, Sepideh Norouzi, Parsa Riazi Bakhshayesh. “Effects of Geometrical and Processing Parameters on Mechanical Properties of Auxetic Polyurethane Foams,” SN Applied Sciences, vol. 4, 2022, p. 162. ](https://link.springer.com/article/10.1007/s42452-022-05042-8#citeas)
 
 ## Skills
 ### Programming
-<canvas id="skillChart" width="400" height="300"></canvas>
-<script>
-    // Get the canvas element
-    const canvas = document.getElementById('skillChart');
-    const ctx = canvas.getContext('2d');
-
-    // Define the skill levels
-    const skills = [
-        { name: 'Python', level: 90 },
-        { name: 'MATLAB', level: 80 },
-        { name: 'C/C++', level: 70 },
-        // Add more skills as needed
-    ];
-
-    // Set the bar height and spacing
-    const barHeight = 20;
-    const barSpacing = 5;
-
-    // Set the starting position for the first bar
-    let y = 10;
-
-    // Loop through the skills and draw the bars
-    skills.forEach((skill) => {
-        const barWidth = skill.level * 1; // Adjust the scale as needed
-
-        // Draw the bar
-        ctx.fillStyle = 'green'; // Set the bar color
-        ctx.fillRect(0, y, barWidth, barHeight);
-
-        // Draw the skill name
-        ctx.fillStyle = 'black'; // Set the text color
-        ctx.font = '10px Arial'; // Set the font
-        ctx.fillText(skill.name, barWidth + 10, y + barHeight - 5);
-
-        // Update the y position for the next bar
-        y += barHeight + barSpacing;
-    });
-</script>
