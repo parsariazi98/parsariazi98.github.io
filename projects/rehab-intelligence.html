@@ -4,27 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wearable rehabilitation intelligence | Parsa Riazi Bakhshayesh</title>
-    <meta
-      name="description"
-      content="Case study for IMU-based human activity recognition research across telerehabilitation, data augmentation, and multi-task deep learning."
-    />
+    <meta name="description" content="Case study for IMU-based human activity recognition research across telerehabilitation, data augmentation, and multi-task deep learning." />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar">
         <div class="topbar-inner">
-          <a class="brand" href="../index.html">
-            <span class="brand-mark">PR</span>
-            <span>Parsa Riazi Bakhshayesh</span>
-          </a>
+          <a class="brand" href="../index.html"><span class="brand-mark">PR</span><span>Parsa Riazi Bakhshayesh</span></a>
           <nav class="nav-links" aria-label="Primary">
             <a href="../index.html#work">Projects</a>
             <a href="../index.html#papers">Papers</a>
@@ -40,11 +31,7 @@
               <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Wearable rehabilitation intelligence</span></div>
               <p class="eyebrow">Sharif University of Technology · 2019–2023</p>
               <h1 class="page-title">A multi-year research thread on making wearable HAR practical for rehabilitation.</h1>
-              <p class="page-subtitle">
-                This case study bundles the work from my master's research and related publications into one narrative:
-                reduce patient burden, understand which augmentations are actually useful, and design sequence models
-                that can distinguish both simple and complex therapeutic activities.
-              </p>
+              <p class="page-subtitle">This case study bundles the work from my master's research and related publications into one narrative: reduce patient burden, understand which augmentations are actually useful, and design sequence models that can distinguish both simple and complex therapeutic activities.</p>
             </div>
             <aside class="detail-panel" data-reveal>
               <div class="project-visual visual-rehab" aria-hidden="true">
@@ -72,18 +59,9 @@
 
         <section class="section">
           <div class="metric-grid">
-            <article class="metric-card" data-reveal>
-              <h3 class="card-title">39 subjects</h3>
-              <p class="card-copy">Main dataset collection for healthy and Parkinson's disease activity modeling.</p>
-            </article>
-            <article class="metric-card" data-reveal>
-              <h3 class="card-title">65 activities</h3>
-              <p class="card-copy">Multi-task study spanning 51 simple and 14 complex activities.</p>
-            </article>
-            <article class="metric-card" data-reveal>
-              <h3 class="card-title">4 publications</h3>
-              <p class="card-copy">Used here to ground the portfolio in evidence rather than generic claims.</p>
-            </article>
+            <article class="metric-card" data-reveal"><h3 class="card-title">39 subjects</h3><p class="card-copy">Main dataset collection for healthy and Parkinson's disease activity modeling.</p></article>
+            <article class="metric-card" data-reveal"><h3 class="card-title">65 activities</h3><p class="card-copy">Multi-task study spanning 51 simple and 14 complex activities.</p></article>
+            <article class="metric-card" data-reveal"><h3 class="card-title">4 publications</h3><p class="card-copy">Used here to ground the portfolio in evidence rather than generic claims.</p></article>
           </div>
         </section>
 
@@ -92,112 +70,42 @@
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 1</p>
               <h3 class="card-title">Minimal-sensor design for telerehabilitation</h3>
-              <p class="card-copy">
-                The key idea was to optimize the system around healthy-subject data first, then adapt it to PD subjects
-                with only a single session of patient data.
-              </p>
+              <p class="card-copy">Optimize around healthy-subject data first, then adapt to PD subjects with only a single session of patient data.</p>
               <div class="result-bars">
-                <div class="bar-row">
-                  <span>Recall</span>
-                  <div class="bar-track"><div class="bar-fill" style="--fill: 95%"></div></div>
-                  <strong>95%</strong>
-                </div>
-                <div class="bar-row">
-                  <span>Adapted PD performance</span>
-                  <div class="bar-track"><div class="bar-fill accent" style="--fill: 80%"></div></div>
-                  <strong>&gt;80%</strong>
-                </div>
-              </div>
-              <div class="paper-links">
-                <a class="inline-link" href="https://doi.org/10.1016/j.medengphy.2022.103876" target="_blank" rel="noreferrer">DOI</a>
+                <div class="bar-row"><span>Recall</span><div class="bar-track"><div class="bar-fill" style="--fill: 95%"></div></div><strong>95%</strong></div>
+                <div class="bar-row"><span>Adapted PD performance</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 80%"></div></div><strong>&gt;80%</strong></div>
               </div>
             </article>
-
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 2</p>
               <h3 class="card-title">Which augmentation methods really help?</h3>
-              <p class="card-copy">
-                On the WISDM dataset with ConvLSTM, the strongest gains came from simple label-preserving strategies
-                rather than more complex transformations.
-              </p>
+              <p class="card-copy">On WISDM with ConvLSTM, the strongest gains came from simpler label-preserving strategies.</p>
               <div class="result-bars">
-                <div class="bar-row">
-                  <span>Raw</span>
-                  <div class="bar-track"><div class="bar-fill" style="--fill: 92%"></div></div>
-                  <strong>92%</strong>
-                </div>
-                <div class="bar-row">
-                  <span>Linear combination</span>
-                  <div class="bar-track"><div class="bar-fill accent" style="--fill: 93%"></div></div>
-                  <strong>93%</strong>
-                </div>
-                <div class="bar-row">
-                  <span>Scaling</span>
-                  <div class="bar-track"><div class="bar-fill" style="--fill: 97%"></div></div>
-                  <strong>97%</strong>
-                </div>
-                <div class="bar-row">
-                  <span>Jittering</span>
-                  <div class="bar-track"><div class="bar-fill accent" style="--fill: 98%"></div></div>
-                  <strong>98%</strong>
-                </div>
-              </div>
-              <div class="paper-links">
-                <a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043959" target="_blank" rel="noreferrer">DOI</a>
+                <div class="bar-row"><span>Raw</span><div class="bar-track"><div class="bar-fill" style="--fill: 92%"></div></div><strong>92%</strong></div>
+                <div class="bar-row"><span>Scaling</span><div class="bar-track"><div class="bar-fill" style="--fill: 97%"></div></div><strong>97%</strong></div>
+                <div class="bar-row"><span>Jittering</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 98%"></div></div><strong>98%</strong></div>
               </div>
             </article>
-
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 3</p>
               <h3 class="card-title">Qualitative validation of augmentation realism</h3>
-              <p class="card-copy">
-                This study used six IMUs, 21 therapeutic activities, a 3D human body model, and 18 expert raters to
-                judge whether augmented signals still looked like real motion.
-              </p>
+              <p class="card-copy">Used six IMUs, 21 therapeutic activities, a 3D body model, and 18 expert raters to judge whether augmented signals still looked like real motion.</p>
               <ul class="summary-list">
                 <li>Time warping best preserved structure overall.</li>
                 <li>Amplitude warping helped specific activities like stairs and standing posture.</li>
                 <li>Walking remained the hardest regime to preserve convincingly.</li>
               </ul>
-              <div class="paper-links">
-                <a class="inline-link" href="https://doi.org/10.1109/ICRoM54204.2021.9663507" target="_blank" rel="noreferrer">DOI</a>
-              </div>
             </article>
-
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 4</p>
               <h3 class="card-title">Multi-task CNN-BiLSTM for simple and complex activities</h3>
-              <p class="card-copy">
-                A shared representation with deeper recurrent modeling improved recognition for both simple and complex
-                activities compared with a CNN-LSTM alternative.
-              </p>
-              <div class="comparison-grid">
-                <div class="comparison-card">
-                  <strong>CNN-LSTM</strong>
-                  <p>71.83% on simple activities and 66.46% on complex activities.</p>
-                </div>
-                <div class="comparison-card">
-                  <strong>CNN-BiLSTM</strong>
-                  <p>84.17% on simple activities and 78.78% on complex activities.</p>
-                </div>
-              </div>
-              <div class="paper-links">
-                <a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043933" target="_blank" rel="noreferrer">DOI</a>
+              <p class="card-copy">A shared representation with deeper recurrent modeling improved recognition for both simple and complex activities compared with a CNN-LSTM alternative.</p>
+              <div class="result-bars">
+                <div class="bar-row"><span>CNN-LSTM</span><div class="bar-track"><div class="bar-fill" style="--fill: 72%"></div></div><strong>71.83% / 66.46%</strong></div>
+                <div class="bar-row"><span>CNN-BiLSTM</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 84%"></div></div><strong>84.17% / 78.78%</strong></div>
               </div>
             </article>
           </div>
-        </section>
-
-        <section class="section">
-          <article class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
-            <p class="eyebrow">What ties the work together</p>
-            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">A research arc from sensing constraints to model design</h2>
-            <p class="section-intro">
-              Across these papers, the pattern is consistent: start by reducing friction in data collection, build
-              augmentation carefully enough to preserve semantics, and only then scale model complexity. That sequence is
-              why this research thread feels cohesive rather than a disconnected set of experiments.
-            </p>
-          </article>
         </section>
       </main>
 

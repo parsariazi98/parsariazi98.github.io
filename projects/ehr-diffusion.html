@@ -4,27 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Multi-modal synthetic EHR and medical image diffusion | Parsa Riazi Bakhshayesh</title>
-    <meta
-      name="description"
-      content="Case study for multi-modal patient modeling and conditional diffusion for synthetic medical image generation."
-    />
+    <meta name="description" content="Case study for multi-modal patient modeling and conditional diffusion for synthetic medical image generation." />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar">
         <div class="topbar-inner">
-          <a class="brand" href="../index.html">
-            <span class="brand-mark">PR</span>
-            <span>Parsa Riazi Bakhshayesh</span>
-          </a>
+          <a class="brand" href="../index.html"><span class="brand-mark">PR</span><span>Parsa Riazi Bakhshayesh</span></a>
           <nav class="nav-links" aria-label="Primary">
             <a href="../index.html#work">Projects</a>
             <a href="../index.html#contact">Contact</a>
@@ -39,11 +30,7 @@
               <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Synthetic EHR &amp; diffusion</span></div>
               <p class="eyebrow">SUNLAB · Jan 2025–May 2025</p>
               <h1 class="page-title">Generating medical images from richer patient state, not isolated labels.</h1>
-              <p class="page-subtitle">
-                This project combines structured patient context with image synthesis. The main idea is that synthetic
-                imaging becomes more useful when the generative model is conditioned on a representation of the visit,
-                while latent patient dependencies are modeled explicitly instead of treated as flat metadata.
-              </p>
+              <p class="page-subtitle">The main idea is that synthetic imaging becomes more useful when the generative model is conditioned on a representation of the visit, while latent patient dependencies are modeled explicitly instead of treated as flat metadata.</p>
             </div>
             <aside class="detail-panel" data-reveal>
               <div class="project-visual visual-ehr" aria-hidden="true">
@@ -53,9 +40,6 @@
                 <div class="patient-graph">
                   <span></span><span></span><span></span><span></span>
                 </div>
-                <div class="particle one"></div>
-                <div class="particle two"></div>
-                <div class="particle three"></div>
                 <div class="visual-card" style="left: 1.3rem; top: 1.4rem">
                   <strong>Conditioning signal</strong>
                   <span>Multi-modal visit representation rather than single-field prompting.</span>
@@ -67,7 +51,7 @@
 
         <section class="section">
           <div class="detail-grid">
-            <article class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
+            <article class="card" data-reveal>
               <p class="eyebrow">System design</p>
               <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">Three layers working together</h2>
               <ul class="summary-list">
@@ -75,59 +59,20 @@
                 <li>Use a Graph Neural Network to model latent dependencies between demographics and sparse medical codes.</li>
                 <li>Condition a diffusion model on that structured latent state to synthesize high-fidelity images.</li>
               </ul>
-              <div class="callout" style="margin-top: 1rem">
-                <strong>Target applications</strong>
-                <span>
-                  The pipeline was designed around Digital Twin and External Control Arm settings where higher-quality
-                  synthetic data can reduce scarcity and improve downstream experimentation.
-                </span>
+              <div class="callout">
+                Target applications: Digital Twin and External Control Arm settings where synthetic data can reduce scarcity and improve downstream experimentation.
               </div>
             </article>
-
             <aside class="sidebar-stack" data-reveal>
               <div class="sidebar-card">
-                <h3>What makes it interesting</h3>
+                <h3>Why it matters</h3>
                 <ul class="mini-list">
                   <li>Bridges structured clinical data and visual generation.</li>
                   <li>Uses graph structure to avoid flattening sparse patient context.</li>
                   <li>Focuses on controllability, not just image realism.</li>
                 </ul>
               </div>
-              <div class="sidebar-card">
-                <h3>Stack</h3>
-                <div class="project-stack">
-                  <span class="chip">Diffusion</span>
-                  <span class="chip">GNN</span>
-                  <span class="chip">Clinical representation learning</span>
-                </div>
-              </div>
             </aside>
-          </div>
-        </section>
-
-        <section class="section">
-          <div class="story-grid">
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">1. Build a visit representation</h3>
-              <p class="card-copy">
-                The conditioning signal integrates multiple sources from the patient visit so the generator receives a
-                more coherent latent summary.
-              </p>
-            </article>
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">2. Model relationships explicitly</h3>
-              <p class="card-copy">
-                A graph layer captures dependencies between demographics and sparse codes that would be easy to lose in a
-                purely tabular embedding.
-              </p>
-            </article>
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">3. Synthesize with intent</h3>
-              <p class="card-copy">
-                The diffusion pipeline is framed as a controlled synthetic data system, useful for downstream clinical AI
-                rather than an image generator in isolation.
-              </p>
-            </article>
           </div>
         </section>
       </main>

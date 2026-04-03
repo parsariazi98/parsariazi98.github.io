@@ -4,27 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Physics-informed polarization geolocalization | Parsa Riazi Bakhshayesh</title>
-    <meta
-      name="description"
-      content="Case study for a physics-informed augmentation and transformer pipeline for polarization-based geolocalization."
-    />
+    <meta name="description" content="Case study for a physics-informed augmentation and transformer pipeline for polarization-based geolocalization." />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar">
         <div class="topbar-inner">
-          <a class="brand" href="../index.html">
-            <span class="brand-mark">PR</span>
-            <span>Parsa Riazi Bakhshayesh</span>
-          </a>
+          <a class="brand" href="../index.html"><span class="brand-mark">PR</span><span>Parsa Riazi Bakhshayesh</span></a>
           <nav class="nav-links" aria-label="Primary">
             <a href="../index.html#work">Projects</a>
             <a href="../index.html#papers">Papers</a>
@@ -40,11 +31,7 @@
               <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Polarization geolocalization</span></div>
               <p class="eyebrow">BioSensors Lab · Aug 2025–Present</p>
               <h1 class="page-title">Learning geolocation from polarization with physics built into the data pipeline.</h1>
-              <p class="page-subtitle">
-                This project starts from a simple practical constraint: real polarization data is expensive, but the
-                underlying optics are structured. Instead of treating that structure as background knowledge, I used it
-                to synthesize data and organize a two-stage prediction pipeline.
-              </p>
+              <p class="page-subtitle">The project starts from a practical constraint: real polarization data is expensive, but the optics are structured. Instead of treating that structure as background knowledge, I used it to synthesize data and organize a hierarchical prediction pipeline.</p>
               <div class="button-row" style="margin-top: 1.4rem">
                 <a class="button primary" href="../assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Open resume</a>
                 <a class="button secondary" href="../index.html#work">Back to portfolio</a>
@@ -59,10 +46,6 @@
                 <div class="wave two"></div>
                 <div class="wave three"></div>
                 <div class="pin"></div>
-                <div class="data-cluster">
-                  <span></span><span></span><span></span><span></span>
-                  <span></span><span></span><span></span><span></span>
-                </div>
                 <div class="visual-card" style="top: 1.6rem; left: 1.5rem">
                   <strong>Goal</strong>
                   <span>Use polarization patterns to estimate location with stronger data efficiency.</span>
@@ -74,21 +57,16 @@
 
         <section class="section">
           <div class="detail-grid">
-            <article class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
+            <article class="card" data-reveal>
               <p class="eyebrow">Challenge</p>
               <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">Turning physical structure into a training advantage</h2>
-              <p class="section-intro">
-                Polarization carries geometry tied to solar elevation, but collecting enough labeled data across time and
-                location is slow. I designed a synthetic augmentation workflow that models those dependencies so the
-                network sees richer variation before it ever reaches the final regression stage.
-              </p>
+              <p class="section-intro">The augmentation workflow was designed to reflect how polarization structure changes with solar elevation rather than applying domain-agnostic perturbations.</p>
               <ul class="summary-list">
                 <li>Modeled solar-elevation dependencies in polarization patterns to scale synthetic training data.</li>
                 <li>Used a Vision Transformer to predict solar-elevation trajectories.</li>
                 <li>Followed with a two-stage PointTransformer for geolocation regression.</li>
               </ul>
             </article>
-
             <aside class="sidebar-stack" data-reveal>
               <div class="sidebar-card">
                 <h3>Key metrics</h3>
@@ -98,68 +76,8 @@
                   <li>&lt; 0.5° longitude error on 68% of test days.</li>
                 </ul>
               </div>
-              <div class="sidebar-card">
-                <h3>Stack</h3>
-                <div class="project-stack">
-                  <span class="chip">ViT</span>
-                  <span class="chip">PointTransformer</span>
-                  <span class="chip">Synthetic augmentation</span>
-                </div>
-              </div>
             </aside>
           </div>
-        </section>
-
-        <section class="section">
-          <div class="story-grid">
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">1. Build the right variation</h3>
-              <p class="card-copy">
-                The first move was not architecture, but data. The augmentation pipeline was designed to reflect how
-                polarization structure changes with solar elevation instead of applying domain-agnostic perturbations.
-              </p>
-            </article>
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">2. Predict trajectory before location</h3>
-              <p class="card-copy">
-                A hierarchical design keeps the task organized: first infer the solar-elevation trajectory, then use a
-                dedicated geolocation regressor to map that representation into latitude and longitude.
-              </p>
-            </article>
-            <article class="story-card" data-reveal>
-              <h3 class="card-title">3. Evaluate on meaningful thresholds</h3>
-              <p class="card-copy">
-                Rather than only report average error, the project tracks how often the model stays under a strict
-                sub-degree threshold across test days.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section">
-          <article class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
-            <p class="eyebrow">Result snapshot</p>
-            <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">Performance summary</h2>
-            <div class="result-bars">
-              <div class="bar-row">
-                <span>Latitude</span>
-                <div class="bar-track"><div class="bar-fill" style="--fill: 35%"></div></div>
-                <strong>35% of test days under 0.5°</strong>
-              </div>
-              <div class="bar-row">
-                <span>Longitude</span>
-                <div class="bar-track"><div class="bar-fill accent" style="--fill: 68%"></div></div>
-                <strong>68% of test days under 0.5°</strong>
-              </div>
-            </div>
-            <div class="callout" style="margin-top: 1rem">
-              <strong>Why this matters</strong>
-              <span>
-                The most important contribution here is the combination of physically grounded augmentation and a staged
-                prediction pipeline. That pairing turns a difficult sensing problem into a more learnable system.
-              </span>
-            </div>
-          </article>
         </section>
       </main>
 
