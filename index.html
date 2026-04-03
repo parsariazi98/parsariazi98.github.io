@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parsa Riazi Bakhshayesh | Research Portfolio</title>
+    <meta
+      name="description"
+      content="PhD researcher working across physics-informed AI, multimodal generation, computer vision, robotics, and wearable sensing."
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="index.html">
+            <span class="brand-mark">PR</span>
+            <span>Parsa Riazi Bakhshayesh</span>
+          </a>
+          <nav class="nav-links" aria-label="Primary">
+            <a href="#about">About</a>
+            <a href="#work">Projects</a>
+            <a href="#papers">Papers</a>
+            <a href="#teaching">Teaching</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-grid">
+            <div class="hero-copy" data-reveal>
+              <p class="eyebrow">UIUC · PhD Researcher</p>
+              <h1>Researching AI systems that stay grounded in physics, signal quality, and real-world use.</h1>
+              <p class="lead">
+                I build multimodal and embodied intelligence systems at the intersection of physics-informed learning,
+                computer vision, robotics, and healthcare AI. My recent work spans polarization-based geolocalization,
+                conditional medical image synthesis, robot-assisted head pose estimation, and wearable rehabilitation
+                intelligence.
+              </p>
+              <div class="button-row" style="margin-top: 1.5rem">
+                <a class="button primary" href="#work">Explore projects</a>
+                <a class="button secondary" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Open resume</a>
+                <a class="button ghost" href="mailto:parsa2@illinois.edu">Email</a>
+              </div>
+              <div class="hero-notes">
+                <div class="note-pill">
+                  <strong>Core themes</strong>
+                  <span>Physics-informed AI, multimodal generation, robot perception, and activity understanding.</span>
+                </div>
+                <div class="note-pill">
+                  <strong>Working style</strong>
+                  <span>Systems-first research with an emphasis on pipeline design, evaluation, and deployment readiness.</span>
+                </div>
+              </div>
+            </div>
+
+            <aside class="hero-panel" data-reveal>
+              <p class="eyebrow">Snapshot</p>
+              <div class="hero-stats">
+                <div class="stat-pill">
+                  <strong>750k+</strong>
+                  <span>Polarization images used for synthetic augmentation and geolocation modeling.</span>
+                </div>
+                <div class="stat-pill">
+                  <strong>65 activities</strong>
+                  <span>Modeled in rehabilitation-focused activity recognition pipelines.</span>
+                </div>
+                <div class="stat-pill">
+                  <strong>4 papers</strong>
+                  <span>Integrated here as evidence-backed case studies instead of generic project blurbs.</span>
+                </div>
+                <div class="stat-pill">
+                  <strong>UR5 + multi-camera rigs</strong>
+                  <span>Hands-on robotics calibration and real-time visual servoing experience.</span>
+                </div>
+              </div>
+              <div class="summary-box" style="margin-top: 1rem">
+                <p>
+                  Based in Champaign, Illinois. Currently focused on trustworthy AI for geolocation, medical imaging,
+                  and assistive robotics.
+                </p>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">About</p>
+              <h2 class="section-title">A research profile built around systems that have to work outside the lab.</h2>
+            </div>
+          </div>
+          <div class="focus-grid">
+            <article class="focus-card" data-reveal>
+              <h3 class="card-title">Physics-informed modeling</h3>
+              <p class="card-copy">
+                I use domain structure, not just scale, to make learning systems behave better. That shows up in my
+                current work on polarization-aware augmentation and structured geolocation pipelines.
+              </p>
+            </article>
+            <article class="focus-card" data-reveal>
+              <h3 class="card-title">Multimodal generation</h3>
+              <p class="card-copy">
+                My generative work combines patient visit representations, image synthesis, and graph-based latent
+                modeling to support Digital Twin and External Control Arm applications.
+              </p>
+            </article>
+            <article class="focus-card" data-reveal>
+              <h3 class="card-title">Embodied perception</h3>
+              <p class="card-copy">
+                I enjoy the messier side of AI research too: calibration, sensor fusion, occlusion-robust tracking, and
+                real-time robotics constraints that force models to become systems.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="work">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Featured Work</p>
+              <h2 class="section-title">Case studies with clearer structure, stronger visuals, and real results.</h2>
+              <p class="section-intro">
+                Each project below has its own page with a tighter breakdown of the challenge, system design, and
+                evidence. The rehabilitation case study is supported directly by the papers listed in the resume.
+              </p>
+            </div>
+          </div>
+
+          <div class="project-list">
+            <article class="project-card" data-reveal>
+              <div class="project-copy">
+                <p class="eyebrow">Ongoing research · BioSensors Lab</p>
+                <h3>Physics-informed polarization geolocalization</h3>
+                <p>
+                  A synthetic-data and hierarchical learning pipeline for predicting solar-elevation trajectories and
+                  regressing geolocation from polarization imagery. The project combines physics priors with deep
+                  transformers to scale training without depending solely on costly field collection.
+                </p>
+                <ul>
+                  <li>Modeled solar-elevation dependencies to generate scalable synthetic polarization data.</li>
+                  <li>Combined a Vision Transformer with a two-stage PointTransformer for precise regression.</li>
+                  <li>Reached sub-0.5 degree latitude and longitude error on meaningful fractions of test days.</li>
+                </ul>
+                <div class="project-stack">
+                  <span class="chip">Vision Transformer</span>
+                  <span class="chip">PointTransformer</span>
+                  <span class="chip">Physics priors</span>
+                </div>
+                <div class="project-links">
+                  <a class="button secondary" href="projects/polarization.html">Read case study</a>
+                </div>
+              </div>
+              <div class="project-visual visual-polarization" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="sun"></div>
+                <div class="orbit"></div>
+                <div class="wave one"></div>
+                <div class="wave two"></div>
+                <div class="wave three"></div>
+                <div class="pin"></div>
+                <div class="data-cluster">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Physics prior</div>
+                <div class="visual-card" style="top: 4.2rem; left: 1.4rem">
+                  <strong>750k+ images</strong>
+                  <span>Synthetic + real polarization data for scalable model training.</span>
+                </div>
+                <div class="visual-card" style="right: 1.4rem; bottom: 1.6rem">
+                  <strong>Hierarchical prediction</strong>
+                  <span>Trajectory estimation first, geolocation regression second.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-copy">
+                <p class="eyebrow">SUNLAB · 2025</p>
+                <h3>Multi-modal synthetic EHR with medical image generation</h3>
+                <p>
+                  A conditional diffusion system for synthesizing clinically plausible medical images from structured
+                  visit representations, while using graph neural networks to model sparse dependencies across patient
+                  demographics and codes.
+                </p>
+                <ul>
+                  <li>Designed conditioning signals from multi-modal patient visit structure.</li>
+                  <li>Added a GNN to capture latent dependencies between sparse medical features.</li>
+                  <li>Framed the pipeline around Digital Twin and External Control Arm use cases.</li>
+                </ul>
+                <div class="project-stack">
+                  <span class="chip">Conditional diffusion</span>
+                  <span class="chip">Graph neural networks</span>
+                  <span class="chip">Clinical multimodality</span>
+                </div>
+                <div class="project-links">
+                  <a class="button secondary" href="projects/ehr-diffusion.html">Read case study</a>
+                </div>
+              </div>
+              <div class="project-visual visual-ehr" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="diffusion-core"></div>
+                <div class="scan-grid"></div>
+                <div class="patient-graph">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="particle one"></div>
+                <div class="particle two"></div>
+                <div class="particle three"></div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Structured visits</div>
+                <div class="visual-card" style="top: 3.8rem; left: 1.5rem">
+                  <strong>Patient graph</strong>
+                  <span>Dependencies between demographics, codes, and latent state.</span>
+                </div>
+                <div class="visual-card" style="right: 1.5rem; bottom: 1.4rem">
+                  <strong>Conditioned synthesis</strong>
+                  <span>Images generated from richer clinical context, not isolated prompts.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-copy">
+                <p class="eyebrow">Intelligent Motion Lab · 2024</p>
+                <h3>Robust 3D head pose estimation for visual servoing</h3>
+                <p>
+                  A robotics perception pipeline for robust head pose estimation under occlusion and extreme angles,
+                  combining 3DDFA landmarks, an Unscented Kalman Filter, and precise eye-to-hand and eye-in-hand
+                  calibration on a shared UR5 control stack.
+                </p>
+                <ul>
+                  <li>Integrated custom vision modules into a real-time visual servoing system.</li>
+                  <li>Added dynamic inter-landmark constraints to stabilize pose tracking with a UKF.</li>
+                  <li>Validated the pipeline on the RGB-D BiWi Kinect dataset.</li>
+                </ul>
+                <div class="project-stack">
+                  <span class="chip">3DDFA</span>
+                  <span class="chip">Unscented Kalman Filter</span>
+                  <span class="chip">UR5 robotics</span>
+                </div>
+                <div class="project-links">
+                  <a class="button secondary" href="projects/head-pose.html">Read case study</a>
+                </div>
+              </div>
+              <div class="project-visual visual-headpose" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="camera"></div>
+                <div class="beam"></div>
+                <div class="head"></div>
+                <div class="beam right"></div>
+                <div class="camera right"></div>
+                <div class="robot-arm">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Real-time loop</div>
+                <div class="visual-card" style="left: 1.5rem; bottom: 1.6rem">
+                  <strong>Calibration-heavy</strong>
+                  <span>Two depth cameras and four endoscopes in a shared setup.</span>
+                </div>
+                <div class="visual-card" style="right: 1.5rem; top: 1.8rem">
+                  <strong>Occlusion robust</strong>
+                  <span>Filtering plus landmark constraints for unstable head motion.</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-copy">
+                <p class="eyebrow">Sharif University of Technology · 2019–2023</p>
+                <h3>Wearable rehabilitation intelligence</h3>
+                <p>
+                  A multi-year research thread on inertial human activity recognition for Parkinson's disease and
+                  telerehabilitation, covering data augmentation, sensor placement, deep sequence models, and
+                  visualization-based validation.
+                </p>
+                <ul>
+                  <li>Reduced an HAR system to two sensors while preserving 95% recall on healthy subjects.</li>
+                  <li>Improved ConvLSTM accuracy from 92% to 98% using targeted augmentation methods.</li>
+                  <li>Benchmarked multi-task CNN-BiLSTM models across 65 activities and 43 subjects.</li>
+                </ul>
+                <div class="project-stack">
+                  <span class="chip">IMU sensing</span>
+                  <span class="chip">HAR</span>
+                  <span class="chip">Sequence models</span>
+                </div>
+                <div class="project-links">
+                  <a class="button secondary" href="projects/rehab-intelligence.html">Read case study</a>
+                </div>
+              </div>
+              <div class="project-visual visual-rehab" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="human">
+                  <span class="torso"></span>
+                  <span class="arms"></span>
+                  <span class="legs"></span>
+                </div>
+                <div class="sensor one"></div>
+                <div class="sensor two"></div>
+                <div class="sensor three"></div>
+                <div class="sensor four"></div>
+                <div class="chart">
+                  <span></span><span></span><span></span><span></span>
+                </div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Paper-backed results</div>
+                <div class="visual-card" style="top: 2rem; right: 1.5rem">
+                  <strong>65 activities</strong>
+                  <span>Simple and complex classes with multi-task sequence modeling.</span>
+                </div>
+                <div class="visual-card" style="left: 1.5rem; top: 2.1rem">
+                  <strong>92% → 98%</strong>
+                  <span>Largest gains came from jittering, scaling, and linear combination.</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="papers">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Selected Publications</p>
+              <h2 class="section-title">Papers used as source material for the case studies.</h2>
+              <p class="section-intro">
+                These links point to the official publication pages. On the site itself, the ideas and metrics are
+                translated into portfolio-friendly summaries and custom visuals.
+              </p>
+            </div>
+          </div>
+          <div class="publication-grid">
+            <article class="paper-card" data-reveal>
+              <h3 class="card-title">A new scheme for the development of IMU-based activity recognition systems for telerehabilitation</h3>
+              <p>
+                A design strategy for minimizing patient burden while preserving performance, including feature
+                extraction, classifier comparisons, and adaptation to PD subjects.
+              </p>
+              <div class="paper-links">
+                <a class="inline-link" href="https://doi.org/10.1016/j.medengphy.2022.103876" target="_blank" rel="noreferrer">DOI</a>
+              </div>
+            </article>
+            <article class="paper-card" data-reveal>
+              <h3 class="card-title">The Effects of Data Augmentation Methods on the Performance of Human Activity Recognition</h3>
+              <p>
+                A focused comparison of six augmentation methods for time-series HAR with ConvLSTM, showing where gains
+                help and where label-preserving transformations become tricky.
+              </p>
+              <div class="paper-links">
+                <a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043959" target="_blank" rel="noreferrer">DOI</a>
+              </div>
+            </article>
+            <article class="paper-card" data-reveal>
+              <h3 class="card-title">Data Augmentation in Mobility Rehab Exercises of PD Patients</h3>
+              <p>
+                Evaluates augmentation realism with a 3D body model and expert grading, which adds an unusually useful
+                qualitative layer to wearable-sensing validation.
+              </p>
+              <div class="paper-links">
+                <a class="inline-link" href="https://doi.org/10.1109/ICRoM54204.2021.9663507" target="_blank" rel="noreferrer">DOI</a>
+              </div>
+            </article>
+            <article class="paper-card" data-reveal>
+              <h3 class="card-title">Accuracy improvement in simple and complex Human Activity Recognition using a CNN-BiLSTM multi-task deep neural network</h3>
+              <p>
+                A multi-task sequence model that explicitly handles simple and complex activities and improves accuracy
+                over a CNN-LSTM alternative.
+              </p>
+              <div class="paper-links">
+                <a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043933" target="_blank" rel="noreferrer">DOI</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="teaching">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Teaching &amp; Mentoring</p>
+              <h2 class="section-title">A second thread running alongside the research.</h2>
+            </div>
+          </div>
+          <div class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-time">Fall 2025</div>
+                <div class="timeline-body">
+                  <h3>Teaching Assistant · Introductory Dynamics</h3>
+                  <p>Worked with Prof. Matthew West at UIUC on a foundational mechanics course.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Spring 2025</div>
+                <div class="timeline-body">
+                  <h3>Teaching Assistant · Engineering and Scientific Application of Deep Learning</h3>
+                  <p>Supported Prof. Elif Ertekin at UIUC on applied deep learning for engineering contexts.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Fall 2022</div>
+                <div class="timeline-body">
+                  <h3>Teaching Assistant · Applied Machine Learning</h3>
+                  <p>Supported course delivery at Sharif University of Technology.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">Fall 2020</div>
+                <div class="timeline-body">
+                  <h3>Teaching Assistant · Robotics</h3>
+                  <p>Assisted Prof. Saeed Behzadipour while building out a stronger robotics foundation.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="cta-band" id="contact" data-reveal>
+          <p class="eyebrow">Contact</p>
+          <h2>Open to research collaborations that need both modeling depth and system-level execution.</h2>
+          <p>
+            If you want to talk about multimodal AI, robotics perception, activity recognition, or research engineering,
+            the fastest way to reach me is by email.
+          </p>
+          <div class="button-row" style="margin-top: 1.2rem">
+            <a class="button primary" href="mailto:parsa2@illinois.edu">parsa2@illinois.edu</a>
+            <a class="button secondary" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>Parsa Riazi Bakhshayesh · Champaign, IL</span>
+          <span>Built as a static portfolio for GitHub Pages.</span>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

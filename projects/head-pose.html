@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Robust 3D head pose estimation | Parsa Riazi Bakhshayesh</title>
+    <meta
+      name="description"
+      content="Case study for robust head pose estimation and visual servoing with UKF filtering, 3DDFA, and UR5 calibration."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div class="topbar-inner">
+          <a class="brand" href="../index.html">
+            <span class="brand-mark">PR</span>
+            <span>Parsa Riazi Bakhshayesh</span>
+          </a>
+          <nav class="nav-links" aria-label="Primary">
+            <a href="../index.html#work">Projects</a>
+            <a href="../index.html#contact">Contact</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="page-hero">
+          <div class="page-grid">
+            <div class="hero-copy" data-reveal>
+              <div class="breadcrumb"><a href="../index.html">Home</a> / <span>3D head pose estimation</span></div>
+              <p class="eyebrow">Intelligent Motion Lab · Jan 2024–Oct 2024</p>
+              <h1 class="page-title">Stabilizing head pose in a robot loop where occlusion and geometry both matter.</h1>
+              <p class="page-subtitle">
+                This project sits squarely between computer vision and robotics systems work. The goal was not only to
+                estimate head pose, but to make that estimate reliable enough to support real-time visual servoing on a
+                UR5 setup with multiple cameras and endoscopes.
+              </p>
+            </div>
+            <aside class="detail-panel" data-reveal>
+              <div class="project-visual visual-headpose" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="camera"></div>
+                <div class="beam"></div>
+                <div class="head"></div>
+                <div class="beam right"></div>
+                <div class="camera right"></div>
+                <div class="robot-arm">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="visual-card" style="left: 1.4rem; bottom: 1.5rem">
+                  <strong>Vision + control</strong>
+                  <span>Pose estimation that survives enough noise to drive robot behavior.</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="detail-grid">
+            <article class="glass-card" style="padding: 1.4rem; border-radius: 28px" data-reveal>
+              <p class="eyebrow">Pipeline</p>
+              <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">From landmarks to a stable control signal</h2>
+              <ul class="summary-list">
+                <li>Used 3DDFA as the facial landmark detector for head pose estimation.</li>
+                <li>Built an Unscented Kalman Filter with dynamic inter-landmark constraints to absorb failures from occlusion and extreme angles.</li>
+                <li>Performed eye-to-hand and eye-in-hand calibration for a multi-camera system with two depth cameras and four endoscopes.</li>
+                <li>Integrated the perception module into a shared UR5 visual servoing stack.</li>
+              </ul>
+            </article>
+
+            <aside class="sidebar-stack" data-reveal>
+              <div class="sidebar-card">
+                <h3>Validation</h3>
+                <ul class="mini-list">
+                  <li>Validated on the RGB-D BiWi Kinect dataset.</li>
+                  <li>Presented as a computer vision term project.</li>
+                  <li>Focused on robustness instead of only nominal accuracy.</li>
+                </ul>
+              </div>
+              <div class="sidebar-card">
+                <h3>Stack</h3>
+                <div class="project-stack">
+                  <span class="chip">3DDFA</span>
+                  <span class="chip">UKF</span>
+                  <span class="chip">Calibration</span>
+                  <span class="chip">UR5</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="comparison-grid">
+            <article class="comparison-card" data-reveal>
+              <strong>Problem framing</strong>
+              <p>
+                Raw landmark detectors are not enough when the head rotates strongly or parts of the face disappear from
+                view. The filter layer exists to convert unstable measurements into a trackable state estimate.
+              </p>
+            </article>
+            <article class="comparison-card" data-reveal>
+              <strong>Systems contribution</strong>
+              <p>
+                The hidden difficulty is calibration: the pose estimator only becomes useful when every camera frame,
+                robot frame, and control frame agree closely enough to support a closed-loop setup.
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <span>Case study · Robust 3D head pose estimation</span>
+          <a href="../index.html">Return home</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>
