@@ -30,8 +30,8 @@
             <div class="hero-copy" data-reveal>
               <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Wearable rehabilitation intelligence</span></div>
               <p class="eyebrow">Sharif University of Technology · 2019–2023</p>
-              <h1 class="page-title">A multi-year research thread on making wearable HAR practical for rehabilitation.</h1>
-              <p class="page-subtitle">This case study bundles the work from my master's research and related publications into one narrative: reduce patient burden, understand which augmentations are actually useful, and design sequence models that can distinguish both simple and complex therapeutic activities.</p>
+              <h1 class="page-title">A rehab research thread now organized into the journal paper and the augmentation studies.</h1>
+              <p class="page-subtitle">This updated case study now separates the only journal paper from the augmentation work, while keeping the CNN-BiLSTM paper as a modeling extension in the same rehabilitation program.</p>
             </div>
             <aside class="detail-panel" data-reveal>
               <div class="project-visual visual-rehab" aria-hidden="true">
@@ -59,53 +59,104 @@
 
         <section class="section">
           <div class="metric-grid">
-            <article class="metric-card" data-reveal"><h3 class="card-title">39 subjects</h3><p class="card-copy">Main dataset collection for healthy and Parkinson's disease activity modeling.</p></article>
-            <article class="metric-card" data-reveal"><h3 class="card-title">65 activities</h3><p class="card-copy">Multi-task study spanning 51 simple and 14 complex activities.</p></article>
-            <article class="metric-card" data-reveal"><h3 class="card-title">4 publications</h3><p class="card-copy">Used here to ground the portfolio in evidence rather than generic claims.</p></article>
+            <article class="metric-card" data-reveal><h3 class="card-title">10 IMUs → 2 sensors</h3><p class="card-copy">The telerehabilitation paper explicitly optimized sensor placement down to a practical two-sensor setup.</p></article>
+            <article class="metric-card" data-reveal><h3 class="card-title">21, 34, and 65 activities</h3><p class="card-copy">The updated papers cover rehab exercise realism, full HAR design, and simple-vs-complex multi-task recognition.</p></article>
+            <article class="metric-card" data-reveal><h3 class="card-title">43 healthy subjects + PD adaptation</h3><p class="card-copy">The strongest datasets in this thread combine larger healthy-cohort studies with targeted Parkinson's adaptation.</p></article>
           </div>
         </section>
 
-        <section class="section">
-          <div class="study-grid">
-            <article class="study-card" data-reveal>
+        <section class="section" id="journal-paper">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Journal paper</p>
+              <h2 class="section-title">System design for telerehabilitation with minimal patient burden.</h2>
+              <p class="section-intro">This is the only journal paper in the rehab thread, and it establishes the system-design workflow that the later papers build on.</p>
+            </div>
+          </div>
+          <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 1</p>
-              <h3 class="card-title">Minimal-sensor design for telerehabilitation</h3>
-              <p class="card-copy">Optimize around healthy-subject data first, then adapt to PD subjects with only a single session of patient data.</p>
+              <h3 class="card-title">Sensor optimization plus one-session PD adaptation</h3>
+              <p class="card-copy">This paper does more than shrink the hardware. It optimizes the HAR system on healthy-subject data across 34 functional and LSVT-BIG activities, then adapts it to Parkinson's patients with only a single session of patient data.</p>
               <div class="result-bars">
                 <div class="bar-row"><span>Recall</span><div class="bar-track"><div class="bar-fill" style="--fill: 95%"></div></div><strong>95%</strong></div>
                 <div class="bar-row"><span>Adapted PD performance</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 80%"></div></div><strong>&gt;80%</strong></div>
               </div>
-            </article>
+              <ul class="summary-list">
+                <li>The final deployable setup emphasized two sensors on the left thigh and left forearm with an NM classifier.</li>
+                <li>The paper reports healthy-subject precision, recall, and F1 above 90%, then above 80% for two PD subjects after one adaptation session.</li>
+                <li>The practical contribution is reducing patient burden without giving up a clinically usable recognition level.</li>
+              </ul>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1016/j.medengphy.2022.103876" target="_blank" rel="noreferrer">DOI</a></div>
+          </article>
+        </section>
+
+        <section class="section" id="augmentation-papers">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Augmentation papers</p>
+              <h2 class="section-title">Testing when synthetic rehab motion helps, and when it does not.</h2>
+              <p class="section-intro">These papers approach augmentation from two angles: classification impact on a benchmark dataset and expert-scored realism for therapeutic motion.</p>
+            </div>
+          </div>
+          <div class="study-grid rehab-study-grid">
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 2</p>
-              <h3 class="card-title">Which augmentation methods really help?</h3>
-              <p class="card-copy">On WISDM with ConvLSTM, the strongest gains came from simpler label-preserving strategies.</p>
+              <h3 class="card-title">Augmentation benchmarking on WISDM with ConvLSTM</h3>
+              <p class="card-copy">This study is useful because it treats augmentation as something to benchmark, not assume. On the six-activity WISDM dataset, the model was retrained seven times to compare six augmentation methods against the raw baseline.</p>
               <div class="result-bars">
                 <div class="bar-row"><span>Raw</span><div class="bar-track"><div class="bar-fill" style="--fill: 92%"></div></div><strong>92%</strong></div>
+                <div class="bar-row"><span>Linear combination</span><div class="bar-track"><div class="bar-fill" style="--fill: 93%"></div></div><strong>93%</strong></div>
                 <div class="bar-row"><span>Scaling</span><div class="bar-track"><div class="bar-fill" style="--fill: 97%"></div></div><strong>97%</strong></div>
                 <div class="bar-row"><span>Jittering</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 98%"></div></div><strong>98%</strong></div>
               </div>
+              <ul class="summary-list">
+                <li>Jittering, scaling, and linear combination were the only methods that clearly improved test accuracy.</li>
+                <li>Stair activities remained the weak point for amplitude warping, time warping, and the autoencoder-based method.</li>
+                <li>All augmentations sped up training, but faster training did not automatically translate into better test performance.</li>
+              </ul>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043959" target="_blank" rel="noreferrer">DOI</a></div>
             </article>
             <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 3</p>
-              <h3 class="card-title">Qualitative validation of augmentation realism</h3>
-              <p class="card-copy">Used six IMUs, 21 therapeutic activities, a 3D body model, and 18 expert raters to judge whether augmented signals still looked like real motion.</p>
+              <h3 class="card-title">Expert-scored realism for rehab exercise augmentation</h3>
+              <p class="card-copy">This paper adds a qualitative layer that is often missing in HAR work: six-IMU signals for 21 therapeutic activities were visualized on a 3D body model and then scored by 18 experts for both similarity and variation.</p>
+              <div class="result-bars">
+                <div class="bar-row"><span>Linear combination</span><div class="bar-track"><div class="bar-fill" style="--fill: 97%"></div></div><strong>4.84 / 5 similarity</strong></div>
+                <div class="bar-row"><span>Time warping</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 20%"></div></div><strong>1.01 / 5 variation score</strong></div>
+              </div>
               <ul class="summary-list">
-                <li>Time warping best preserved structure overall.</li>
-                <li>Amplitude warping helped specific activities like stairs and standing posture.</li>
-                <li>Walking remained the hardest regime to preserve convincingly.</li>
+                <li>Across all 21 activities, time warping was the best overall choice, but not for every motion type.</li>
+                <li>For dynamic walking activities, time warping failed the 80% similarity threshold, so amplitude warping and linear combination were the safer choices.</li>
+                <li>Amplitude warping was preferred for stair down, PO-left, and standing posture, while time warping worked better for SFR-right and stair up.</li>
               </ul>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICRoM54204.2021.9663507" target="_blank" rel="noreferrer">DOI</a></div>
             </article>
-            <article class="study-card" data-reveal>
+          </div>
+        </section>
+
+        <section class="section" id="modeling-extension">
+          <div class="section-header" data-reveal>
+            <div>
+              <p class="eyebrow">Related extension</p>
+              <h2 class="section-title">A modeling follow-up on simple and complex therapeutic motion.</h2>
+              <p class="section-intro">This paper is not an augmentation study, but it extends the same rehab program into multi-task sequence modeling and stays relevant to the broader portfolio story.</p>
+            </div>
+          </div>
+          <article class="study-card" data-reveal>
               <p class="eyebrow">Paper 4</p>
-              <h3 class="card-title">Multi-task CNN-BiLSTM for simple and complex activities</h3>
-              <p class="card-copy">A shared representation with deeper recurrent modeling improved recognition for both simple and complex activities compared with a CNN-LSTM alternative.</p>
+              <h3 class="card-title">Multi-task CNN-BiLSTM for simple vs. complex activities</h3>
+              <p class="card-copy">The updated paper makes the setup clearer: 43 healthy subjects wore four smart bands on both wrists and thighs, and the model jointly handled 51 simple activities and 14 complex activities in a branched multi-task architecture.</p>
               <div class="result-bars">
                 <div class="bar-row"><span>CNN-LSTM</span><div class="bar-track"><div class="bar-fill" style="--fill: 72%"></div></div><strong>71.83% / 66.46%</strong></div>
                 <div class="bar-row"><span>CNN-BiLSTM</span><div class="bar-track"><div class="bar-fill accent" style="--fill: 84%"></div></div><strong>84.17% / 78.78%</strong></div>
               </div>
-            </article>
-          </div>
+              <ul class="summary-list">
+                <li>The bidirectional model improved both simple and complex activity recognition, not just one branch.</li>
+                <li>The gains were especially meaningful for dynamic multi-phase motions like walking, stair climbing, and several LSVT-BIG activities.</li>
+                <li>The paper argues that future temporal context is a major advantage when activities contain multiple recurrent or staged phases.</li>
+              </ul>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043933" target="_blank" rel="noreferrer">DOI</a></div>
+          </article>
         </section>
       </main>
 

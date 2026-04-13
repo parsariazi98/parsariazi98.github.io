@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Robust 3D head pose estimation | Parsa Riazi Bakhshayesh</title>
-    <meta name="description" content="Case study for robust head pose estimation and visual servoing with UKF filtering, 3DDFA, and UR5 calibration." />
+    <meta name="description" content="Case study for robust head pose estimation and visual servoing with 3DDFA_V2, selective facial landmarks, UKF filtering, and BiWi validation." />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -30,22 +30,18 @@
               <div class="breadcrumb"><a href="../index.html">Home</a> / <span>3D head pose estimation</span></div>
               <p class="eyebrow">Intelligent Motion Lab · Jan 2024–Oct 2024</p>
               <h1 class="page-title">Stabilizing head pose in a robot loop where occlusion and geometry both matter.</h1>
-              <p class="page-subtitle">The goal was not only to estimate head pose, but to make that estimate reliable enough to support real-time visual servoing on a UR5 setup with multiple cameras and endoscopes.</p>
+              <p class="page-subtitle">The goal was not only to estimate head pose, but to make that estimate reliable enough to support real-time visual servoing on a UR5 setup with multiple cameras and endoscopes. The Spring 2024 computer vision report sharpened this work around clinical eye-exam scenarios, selective landmarks, and report-backed tracking evidence.</p>
             </div>
             <aside class="detail-panel" data-reveal>
-              <div class="project-visual visual-headpose" aria-hidden="true">
+              <div class="project-visual visual-paper-figure" aria-hidden="true">
                 <div class="visual-grid"></div>
-                <div class="camera"></div>
-                <div class="beam"></div>
-                <div class="head"></div>
-                <div class="beam right"></div>
-                <div class="camera right"></div>
-                <div class="robot-arm">
-                  <span></span><span></span><span></span>
+                <div class="figure-frame">
+                  <img src="../assets/paper-figures/headpose-landmarks.png" alt="Selected facial landmarks from the computer vision term project report" />
                 </div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Report-backed setup</div>
                 <div class="visual-card" style="left: 1.4rem; bottom: 1.5rem">
-                  <strong>Vision + control</strong>
-                  <span>Pose estimation that survives enough noise to drive robot behavior.</span>
+                  <strong>Selective landmarks</strong>
+                  <span>Outer eye corners, nose tip, and nasion replaced more fragile pupil-centered tracking.</span>
                 </div>
               </div>
             </aside>
@@ -53,24 +49,91 @@
         </section>
 
         <section class="section">
+          <div class="metric-grid">
+            <article class="metric-card" data-reveal><h3 class="card-title">4 stable landmarks</h3><p class="card-copy">The report centered tracking on the two outer eye corners, the nose tip, and the nasion for a more reliable clinical feature set.</p></article>
+            <article class="metric-card" data-reveal><h3 class="card-title">9-state UKF</h3><p class="card-copy">State variables covered translation, rotation, and three facial distances, while the measurements were the 2D pixel coordinates of four landmarks.</p></article>
+            <article class="metric-card" data-reveal><h3 class="card-title">&lt; 5 px error</h3><p class="card-copy">Average landmark tracking error stayed under five pixels relative to 3DDFA_V2 across the BiWi Kinect evaluation.</p></article>
+          </div>
+        </section>
+
+        <section class="section">
           <div class="detail-grid">
             <article class="card" data-reveal>
-              <p class="eyebrow">Pipeline</p>
-              <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">From landmarks to a stable control signal</h2>
+              <p class="eyebrow">Report-backed pipeline</p>
+              <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">From selective landmarks to a stable control signal</h2>
+              <p class="section-intro">The term project made the tracking stack much more explicit: treat head pose estimation as a filtering problem with a carefully chosen feature set, not just a detector output.</p>
               <ul class="summary-list">
-                <li>Used 3DDFA as the facial landmark detector for head pose estimation.</li>
-                <li>Built an Unscented Kalman Filter with dynamic inter-landmark constraints to absorb failures from occlusion and extreme angles.</li>
-                <li>Performed eye-to-hand and eye-in-hand calibration for a multi-camera system with two depth cameras and four endoscopes.</li>
-                <li>Integrated the perception module into a shared UR5 visual servoing stack.</li>
+                <li>Used 3DDFA_V2 to detect four landmarks in each frame: the outer eye corners, the nose tip, and the nasion.</li>
+                <li>Defined an 8-value measurement space from 2D landmark coordinates and a 9-state UKF over translation, rotation, and inter-landmark distances.</li>
+                <li>Initialized the filter from BiWi pose annotations, then tuned process and measurement noise for 30 FPS head motion.</li>
+                <li>Carried the perception lessons into the larger robot setup with eye-to-hand and eye-in-hand calibration for two depth cameras and four endoscopes around a UR5 stack.</li>
               </ul>
             </article>
             <aside class="sidebar-stack" data-reveal>
               <div class="sidebar-card">
-                <h3>Validation</h3>
+                <h3>Dataset context</h3>
                 <ul class="mini-list">
-                  <li>Validated on the RGB-D BiWi Kinect dataset.</li>
-                  <li>Presented as a computer vision term project.</li>
-                  <li>Focused on robustness instead of nominal-only accuracy.</li>
+                  <li>Validated on the BiWi Kinect head pose database.</li>
+                  <li>24 sequences from 20 subjects, recorded at roughly one meter from the sensor.</li>
+                  <li>Presented as a UIUC computer vision term project focused on clinical eye-exam use cases.</li>
+                </ul>
+              </div>
+              <div class="sidebar-card">
+                <h3>Tracking takeaway</h3>
+                <ul class="mini-list">
+                  <li>Left eye corner and nose tip were the most stable landmarks in practice.</li>
+                  <li>Half-face poses created the largest spikes in error.</li>
+                  <li>Frontal views were consistently the easiest frames to track.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="detail-grid">
+            <article class="figure-box" data-reveal>
+              <p class="eyebrow">Selected landmarks</p>
+              <h2 class="section-title" style="font-size: clamp(1.9rem, 4vw, 2.6rem)">Why the feature choice mattered</h2>
+              <div class="report-figure">
+                <img src="../assets/paper-figures/headpose-landmarks.png" alt="Selected facial landmarks from the CV term project report" />
+              </div>
+              <p class="card-copy">The report moved away from pupil-centered tracking and instead used the outer eye corners, nose tip, and nasion as a more stable feature set under partial occlusion and clinical motion.</p>
+            </article>
+            <article class="figure-box" data-reveal>
+              <p class="eyebrow">Tracking evidence</p>
+              <h2 class="section-title" style="font-size: clamp(1.9rem, 4vw, 2.6rem)">What the report found</h2>
+              <div class="report-figure">
+                <img src="../assets/paper-figures/headpose-tracking.png" alt="UKF and centroid tracking results from the CV term project report" />
+              </div>
+              <ul class="summary-list">
+                <li>Average RMSE versus 3DDFA_V2 was 3.98 px for the right eye, 2.02 px for the left eye, 3.67 px for the nose tip, and 4.81 px for the nasion.</li>
+                <li>Centroid trajectories from UKF and 3DDFA_V2 stayed close even though the BiWi head-center annotation was biased below the chosen landmark centroid.</li>
+                <li>The strongest failure cases were half-face poses, where eye landmarks became harder to localize or confused in image space.</li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="detail-grid">
+            <article class="card" data-reveal>
+              <p class="eyebrow">Engineering relevance</p>
+              <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">Why this mattered for the robot project</h2>
+              <p class="section-intro">The report helped turn a perception idea into something more deployable: it showed where filtering genuinely stabilizes motion estimates and where the detector still breaks first.</p>
+              <ul class="summary-list">
+                <li>The UKF layer showed that landmark filtering can smooth a pose signal enough to be useful before it reaches a visual servoing loop.</li>
+                <li>The results also clarified what to guard against in a robot-facing system: occlusion, low light, missed detections, and extreme half-face poses.</li>
+                <li>The main limitation was evaluation against 3DDFA_V2 rather than an external landmark ground truth, which the report identifies as the next step for stronger quantitative comparison.</li>
+              </ul>
+            </article>
+            <aside class="sidebar-stack" data-reveal>
+              <div class="sidebar-card">
+                <h3>Project lineage</h3>
+                <ul class="mini-list">
+                  <li>Spring 2024 Computer Vision term project at UIUC.</li>
+                  <li>Focused on clinical head tracking for eye-exam systems.</li>
+                  <li>Fed directly into the broader robotic perception and calibration effort.</li>
                 </ul>
               </div>
             </aside>

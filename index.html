@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -191,59 +191,80 @@
               <div class="project-copy">
                 <p class="eyebrow">Intelligent Motion Lab · 2024</p>
                 <h3>Robust 3D head pose estimation for visual servoing</h3>
-                <p>A robotics perception pipeline that combines landmark detection, UKF filtering, and careful multi-camera calibration to produce a stable control signal.</p>
+                <p>A robotics perception pipeline sharpened by a Spring 2024 computer vision report on clinical head tracking, then extended toward multi-camera visual servoing.</p>
                 <ul>
-                  <li>Built for occlusion and extreme head angles.</li>
-                  <li>Integrated into a shared UR5 visual servoing stack.</li>
-                  <li>Validated on the RGB-D BiWi Kinect dataset.</li>
+                  <li>Used 3DDFA_V2 with four selected landmarks and a UKF instead of relying on raw frame-to-frame detections.</li>
+                  <li>Reported landmark tracking error under 5 pixels relative to 3DDFA_V2 on the BiWi Kinect dataset.</li>
+                  <li>Exposed half-face poses as the hardest regime before integration into the broader UR5 visual servoing stack.</li>
                 </ul>
                 <div class="project-links">
                   <a class="button secondary" href="projects/head-pose.html">Read case study</a>
                 </div>
               </div>
-              <div class="project-visual visual-headpose" aria-hidden="true">
+              <div class="project-visual visual-paper-figure" aria-hidden="true">
                 <div class="visual-grid"></div>
-                <div class="camera"></div>
-                <div class="beam"></div>
-                <div class="head"></div>
-                <div class="beam right"></div>
-                <div class="camera right"></div>
-                <div class="robot-arm">
-                  <span></span><span></span><span></span>
+                <div class="figure-frame">
+                  <img src="assets/paper-figures/headpose-landmarks.png" alt="Selected facial landmarks from the head pose term project report" />
                 </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Robot loop</div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">CV report figure</div>
+                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
+                  <strong>Selective landmarks</strong>
+                  <span>Outer eye corners, nose tip, and nasion were chosen as the stable feature set for filtering.</span>
+                </div>
               </div>
             </article>
 
             <article class="project-card" data-reveal>
               <div class="project-copy">
-                <p class="eyebrow">Sharif University of Technology · 2019–2023</p>
-                <h3>Wearable rehabilitation intelligence</h3>
-                <p>A multi-paper research thread on inertial human activity recognition for Parkinson's disease and telerehabilitation.</p>
+                <p class="eyebrow">Sharif University of Technology · Journal paper</p>
+                <h3>IMU-based telerehabilitation system design</h3>
+                <p>The rehab thread now starts with the journal paper: a full system-design study for Parkinson's telerehabilitation that minimizes patient burden while preserving clinically useful recognition.</p>
                 <ul>
-                  <li>Reduced a system to two sensors while preserving 95% recall.</li>
-                  <li>Improved ConvLSTM accuracy from 92% to 98% with targeted augmentation.</li>
-                  <li>Benchmarked multi-task CNN-BiLSTM models across 65 activities.</li>
+                  <li>Optimized a 10-IMU setup down to a left thigh and left forearm pair.</li>
+                  <li>Reached 95% recall on healthy-subject data and maintained above 80% after patient adaptation.</li>
+                  <li>Structured the pipeline explicitly as data acquisition, optimal HAR design, and one-session PD adaptation.</li>
                 </ul>
                 <div class="project-links">
-                  <a class="button secondary" href="projects/rehab-intelligence.html">Read case study</a>
+                  <a class="button secondary" href="projects/rehab-intelligence.html#journal-paper">Read journal paper section</a>
                 </div>
               </div>
-              <div class="project-visual visual-rehab" aria-hidden="true">
+              <div class="project-visual visual-paper-figure" aria-hidden="true">
                 <div class="visual-grid"></div>
-                <div class="human">
-                  <span class="torso"></span>
-                  <span class="arms"></span>
-                  <span class="legs"></span>
+                <div class="figure-frame">
+                  <img src="assets/paper-figures/telerehab-workflow.png" alt="Workflow figure from the telerehabilitation journal paper" />
                 </div>
-                <div class="sensor one"></div>
-                <div class="sensor two"></div>
-                <div class="sensor three"></div>
-                <div class="sensor four"></div>
-                <div class="chart">
-                  <span></span><span></span><span></span><span></span>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Journal workflow</div>
+                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
+                  <strong>Main figure</strong>
+                  <span>Figure-derived workflow showing how the HAR system is designed and then adapted for PD patients.</span>
                 </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Paper-backed results</div>
+              </div>
+            </article>
+
+            <article class="project-card" data-reveal>
+              <div class="project-copy">
+                <p class="eyebrow">Sharif University of Technology · Augmentation papers</p>
+                <h3>Rehabilitation data augmentation studies</h3>
+                <p>Two companion studies test augmentation from both sides: whether it improves HAR performance and whether the generated rehab motion still looks natural to experts.</p>
+                <ul>
+                  <li>Benchmarked six time-series augmentation methods from a 92% raw baseline up to 98% with jittering.</li>
+                  <li>Used 6 IMUs, 21 therapeutic activities, and 18 expert raters to judge realism and variation.</li>
+                  <li>Showed there is no one best augmentation method across all activity types, especially for dynamic walking tasks.</li>
+                </ul>
+                <div class="project-links">
+                  <a class="button secondary" href="projects/rehab-intelligence.html#augmentation-papers">Read augmentation section</a>
+                </div>
+              </div>
+              <div class="project-visual visual-paper-figure" aria-hidden="true">
+                <div class="visual-grid"></div>
+                <div class="figure-frame">
+                  <img src="assets/paper-figures/augmentation-summary.png" alt="Result figure from the rehabilitation data augmentation paper" />
+                </div>
+                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Augmentation evidence</div>
+                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
+                  <strong>Main figure</strong>
+                  <span>Representative figure from the augmentation study comparing perceived similarity and useful variation.</span>
+                </div>
               </div>
             </article>
           </div>
@@ -253,7 +274,7 @@
           <div class="section-header" data-reveal>
             <div>
               <p class="eyebrow">Selected Publications</p>
-              <h2 class="section-title">The rehabilitation case study is grounded directly in these papers.</h2>
+              <h2 class="section-title">The rehab portfolio is now split into the journal paper, the augmentation studies, and a related modeling extension.</h2>
             </div>
           </div>
           <div class="publication-grid">
