@@ -3,22 +3,32 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Physics-informed polarization geolocalization | Parsa Riazi Bakhshayesh</title>
-    <meta name="description" content="Case study for a physics-informed augmentation and transformer pipeline for polarization-based geolocalization." />
+    <title>Skypol — sky-polarization geolocalization | Parsa Riazi Bakhshayesh</title>
+    <meta
+      name="description"
+      content="Skypol: physics-based simulation, sensor-faithful emulation, and day-held-out evaluation for geolocalization from sky polarization imagery."
+    />
     <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
     <div class="site-shell">
       <header class="topbar">
         <div class="topbar-inner">
-          <a class="brand" href="../index.html"><span class="brand-mark">PR</span><span>Parsa Riazi Bakhshayesh</span></a>
+          <a class="brand" href="../index.html">
+            <span class="brand-mark">PR</span>
+            <span>Parsa Riazi Bakhshayesh</span>
+          </a>
           <nav class="nav-links" aria-label="Primary">
+            <a href="../index.html#skypol">Skypol</a>
             <a href="../index.html#work">Projects</a>
-            <a href="../index.html#papers">Papers</a>
+            <a href="../index.html#papers">Publications</a>
             <a href="../index.html#contact">Contact</a>
           </nav>
         </div>
@@ -28,63 +38,275 @@
         <section class="page-hero">
           <div class="page-grid">
             <div class="hero-copy" data-reveal>
-              <div class="breadcrumb"><a href="../index.html">Home</a> / <span>Polarization geolocalization</span></div>
-              <p class="eyebrow">BioSensors Lab · Aug 2025–Present</p>
-              <h1 class="page-title">Learning geolocation from polarization with physics built into the data pipeline.</h1>
-              <p class="page-subtitle">The project starts from a practical constraint: real polarization data is expensive, but the optics are structured. Instead of treating that structure as background knowledge, I used it to synthesize data and organize a hierarchical prediction pipeline.</p>
-              <div class="button-row" style="margin-top: 1.4rem">
-                <a class="button primary" href="../assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Open resume</a>
-                <a class="button secondary" href="../index.html#work">Back to portfolio</a>
+              <div class="breadcrumb"><a href="../index.html">Home</a> <span>/</span> <span>Skypol</span></div>
+              <p class="eyebrow">BioSensors Lab · UIUC · Aug 2025 – present</p>
+              <h1 class="page-title">Skypol: learning position from the polarization pattern of the sky.</h1>
+              <p class="page-subtitle">
+                Rayleigh scattering imprints the sun's position onto the sky's angle of polarization, and the sun's
+                apparent path over a day is a function of latitude and longitude. Skypol learns that inverse map from
+                polarimetric imagery. The hard part is not the regression — it is building training data that
+                generalizes and an evaluation protocol that does not quietly leak the answer.
+              </p>
+              <div class="chip-row">
+                <span class="chip">Vision Transformer</span>
+                <span class="chip">PointTransformer</span>
+                <span class="chip">Rayleigh forward model</span>
+                <span class="chip">Domain adaptation</span>
+                <span class="chip">Day-held-out evaluation</span>
+              </div>
+              <div class="button-row" style="margin-top: 1.75rem">
+                <a class="button primary" href="../index.html#skypol">Back to overview</a>
+                <a class="button" href="../assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Curriculum vitae</a>
               </div>
             </div>
-            <aside class="detail-panel" data-reveal>
-              <div class="project-visual visual-polarization" aria-hidden="true">
-                <div class="visual-grid"></div>
-                <div class="sun"></div>
-                <div class="orbit"></div>
-                <div class="wave one"></div>
-                <div class="wave two"></div>
-                <div class="wave three"></div>
-                <div class="pin"></div>
-                <div class="visual-card" style="top: 1.6rem; left: 1.5rem">
-                  <strong>Goal</strong>
-                  <span>Use polarization patterns to estimate location with stronger data efficiency.</span>
-                </div>
+            <aside class="sidebar-stack" data-reveal>
+              <div class="sidebar-card">
+                <h3>Project facts</h3>
+                <ul class="mini-list">
+                  <li><b>Advisor:</b> Prof. David Forsyth</li>
+                  <li><b>Lab:</b> BioSensors Lab, UIUC</li>
+                  <li><b>Status:</b> ongoing; manuscript in preparation</li>
+                  <li><b>Data:</b> simulated, sensor-emulated, and real campaign captures</li>
+                </ul>
+              </div>
+              <div class="callout">
+                Every number reported below comes from real validation and test days that no synthetic or emulated
+                frame ever touches.
               </div>
             </aside>
           </div>
         </section>
 
+        <!-- ============================================== overview -->
+        <section class="section">
+          <div class="section-header" data-reveal>
+            <p class="eyebrow">Overview</p>
+            <h2 class="section-title">The full pipeline, end to end.</h2>
+          </div>
+
+          <figure class="figure" data-reveal>
+            <img
+              src="../assets/skypol/skypol-workflow.png"
+              alt="Skypol pipeline from spherical-triangle observer sampling through Rayleigh simulation, sensor-faithful emulation, day-held-out splitting, and three training regimes evaluated on shared real validation and test days."
+            />
+            <figcaption>
+              <b>Figure 1.</b> Spherical-triangle simulation through held-out evaluation. Three training regimes —
+              real-only, simulation + real, and emulation + real — are trained separately and scored on identical
+              real validation and test days.
+            </figcaption>
+          </figure>
+        </section>
+
+        <!-- ============================================ simulation -->
         <section class="section">
           <div class="detail-grid">
-            <article class="card" data-reveal>
-              <p class="eyebrow">Challenge</p>
-              <h2 class="section-title" style="font-size: clamp(2rem, 4vw, 2.8rem)">Turning physical structure into a training advantage</h2>
-              <p class="section-intro">The augmentation workflow was designed to reflect how polarization structure changes with solar elevation rather than applying domain-agnostic perturbations.</p>
+            <article data-reveal>
+              <p class="eyebrow">Step 1 – 2.1 · Simulation</p>
+              <h2 class="section-title">Sampling observers around a site the model never sees.</h2>
+              <p class="section-intro" style="margin-top: 0.75rem">
+                Observer locations are drawn inside a geodesic triangle that surrounds the target site. The target
+                itself is deliberately excluded from simulation, so success requires interpolating the polarization
+                geometry to an unseen position rather than memorizing a coordinate that appeared in training.
+              </p>
+              <p class="section-intro">
+                For each sampled location, a Rayleigh simulator maps date, time, and position to angle-of-polarization
+                and degree-of-polarization fields together with the associated solar metadata. Each day is represented
+                by 64 samples spaced uniformly from sunrise to sunset — roughly 675 seconds apart — so the network is
+                supervised on a complete solar arc rather than on isolated, ambiguous frames.
+              </p>
               <ul class="summary-list">
-                <li>Modeled solar-elevation dependencies in polarization patterns to scale synthetic training data.</li>
-                <li>Used a Vision Transformer to predict solar-elevation trajectories.</li>
-                <li>Followed with a two-stage PointTransformer for geolocation regression.</li>
+                <li>Date, time, and location in; angle- and degree-of-polarization fields plus metadata out.</li>
+                <li>64 trajectory samples per day, uniform in time between sunrise and sunset.</li>
+                <li>The target site is held out of simulation entirely.</li>
+              </ul>
+            </article>
+            <aside data-reveal>
+              <figure class="figure figure-pad">
+                <img src="../assets/skypol/skypol-triangle.png" alt="Simulated observer locations distributed inside a spherical triangle around an excluded target site." />
+                <figcaption><b>Figure 2.</b> Spherical-triangle sampling of observer locations.</figcaption>
+              </figure>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ============================================= emulation -->
+        <section class="section">
+          <div class="detail-grid">
+            <article data-reveal>
+              <p class="eyebrow">Step 2.2 · Sensor-faithful emulation</p>
+              <h2 class="section-title">Closing the sensor gap without inventing data.</h2>
+              <p class="section-intro" style="margin-top: 0.75rem">
+                Simulated fields are geometrically correct and photometrically wrong. Real captures carry noise,
+                vignetting, saturation near the zenith, and a specific sensor response that a forward model does not
+                reproduce. Rather than adding synthetic noise, emulation borrows the texture from real measurements.
+              </p>
+              <p class="section-intro">
+                For a given simulated frame, candidate real captures are restricted to a comparable solar zenith band
+                and ranked by angular separation <span style="font-family: var(--mono)">θ<sub>sep</sub></span>. The
+                residual azimuth <span style="font-family: var(--mono)">Δaz</span> between the matched pair is then
+                removed by rotating the angle-of-polarization field — flipping sign, rotating by
+                <span style="font-family: var(--mono)">−Δaz</span>, and flipping back, because the angle of
+                polarization is an orientation rather than a vector. The result is an emulated frame that carries real
+                sensor texture with the heading the simulator asked for.
+              </p>
+              <ul class="summary-list">
+                <li>Match candidates by zenith band, rank by angular separation.</li>
+                <li>Keep the residual azimuth and apply it as a sign-aware rotation.</li>
+                <li>Emulated frames enter training only; they never appear in validation or test.</li>
+              </ul>
+            </article>
+            <aside data-reveal>
+              <figure class="figure figure-pad">
+                <img src="../assets/skypol/skypol-emulation.png" alt="A simulated angle-of-polarization disk matched to three real captures at comparable zenith, producing an emulated frame with real texture and simulated heading." />
+                <figcaption><b>Figure 3.</b> Matching and rotation produce an emulated frame.</figcaption>
+              </figure>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ================================================= model -->
+        <section class="section">
+          <div class="section-header" data-reveal>
+            <p class="eyebrow">Model</p>
+            <h2 class="section-title">Trajectory first, then position.</h2>
+            <p class="section-intro">
+              The pipeline is hierarchical rather than end-to-end: a Vision Transformer reads polarization frames and
+              predicts the solar-elevation trajectory, and a two-stage PointTransformer regresses geolocation from
+              that trajectory. Splitting the problem lets each stage be supervised by a quantity with a clean physical
+              meaning.
+            </p>
+          </div>
+          <div class="detail-grid">
+            <article data-reveal>
+              <h3 class="card-title" style="font-size: 1.1rem">Losses chosen to match the geometry</h3>
+              <ul class="summary-list">
+                <li>
+                  <b>Great-circle position error.</b> The location head emits raw
+                  <span style="font-family: var(--mono)">xyz</span>, normalizes to the unit sphere, and is trained
+                  with a cosine embedding loss between unit vectors. The loss angle is therefore the great-circle
+                  error itself, avoiding the distortion that a direct latitude/longitude regression introduces away
+                  from the equator.
+                </li>
+                <li>
+                  <b>Zenith head.</b> A separate head is trained with mean-squared error on
+                  <span style="font-family: var(--mono)">cos(zenith)</span>, which is linear in the quantity the
+                  polarization pattern actually constrains.
+                </li>
+                <li>
+                  <b>Heading as auxiliary supervision.</b> Adding heading to the trajectory predictor reduced error in
+                  both simulation and real data — the network no longer has to infer camera orientation implicitly
+                  before it can use the polarization geometry.
+                </li>
               </ul>
             </article>
             <aside class="sidebar-stack" data-reveal>
               <div class="sidebar-card">
-                <h3>Key metrics</h3>
+                <h3>Open problem</h3>
+                <p style="font-size: 0.9rem; color: var(--muted)">
+                  Longitude error consistently exceeds latitude error. Latitude is fixed by the solar elevation
+                  envelope, while longitude depends on <em>when</em> that envelope peaks — so it inherits every bit of
+                  timestamp imprecision in the capture pipeline. Current work targets that timing path directly.
+                </p>
+              </div>
+              <div class="sidebar-card">
+                <h3>In progress</h3>
                 <ul class="mini-list">
-                  <li>~750k polarization images in training.</li>
-                  <li>&lt; 0.5° latitude error on 35% of test days.</li>
-                  <li>&lt; 0.5° longitude error on 68% of test days.</li>
+                  <li>MAML-style per-day fine-tuning.</li>
+                  <li>Aggressive pixel-knockout augmentation for occlusion robustness.</li>
+                  <li>A compact ViT encoder as a lighter backbone.</li>
+                  <li>Hard-negative retraining on confusable sites.</li>
                 </ul>
               </div>
             </aside>
+          </div>
+        </section>
+
+        <!-- ============================================ evaluation -->
+        <section class="section">
+          <div class="section-header" data-reveal>
+            <p class="eyebrow">Step 4 – 5 · Evaluation</p>
+            <h2 class="section-title">Day-held-out splits, one shared test set.</h2>
+            <p class="section-intro">
+              Frames within a single day are strongly correlated: the same sky, the same haze, the same calibration.
+              A random frame-level split therefore reports something close to interpolation accuracy. Skypol splits at
+              the day level and orders the blocks chronologically, so the test set lies strictly in the future of the
+              training set.
+            </p>
+          </div>
+
+          <figure class="figure figure-pad" data-reveal>
+            <img src="../assets/skypol/skypol-split.png" alt="Real campaign days from July 1 to August 29 split into chronological train, validation, and test blocks with no day appearing in more than one split." />
+            <figcaption>
+              <b>Figure 4.</b> Real campaign days are partitioned into chronological blocks — roughly 40% train, 30%
+              validation, 30% test — with no day leakage. Simulated and emulated rows are retained only on real
+              training days; validation and test see real data exclusively.
+            </figcaption>
+          </figure>
+
+          <h3 class="card-title" style="font-size: 1.1rem; margin-top: 2.5rem" data-reveal>Three training regimes, one evaluation</h3>
+          <p class="section-intro" data-reveal>
+            Each regime is trained separately and scored on the identical real validation and test subsets, so the
+            comparison isolates the effect of the synthetic data rather than the effect of the split.
+          </p>
+
+          <table class="data-table" data-reveal>
+            <thead>
+              <tr>
+                <th scope="col">Regime</th>
+                <th scope="col">Training data</th>
+                <th scope="col">Validation</th>
+                <th scope="col">Test</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Real-only</td>
+                <td>Real train days (≈40% of the campaign)</td>
+                <td>Real val days</td>
+                <td>Real test days</td>
+              </tr>
+              <tr>
+                <td>Simulation + real</td>
+                <td>Rayleigh simulation + real train days</td>
+                <td>Real val days</td>
+                <td>Real test days</td>
+              </tr>
+              <tr>
+                <td>Emulation + real</td>
+                <td>Emulated angle-of-polarization + real train days</td>
+                <td>Real val days</td>
+                <td>Real test days</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="metric-grid" style="margin-top: 2.5rem" data-reveal>
+            <div class="metric-card">
+              <span class="metric-value">~750k</span>
+              <span class="metric-label">Polarization frames across simulated, emulated, and real sources.</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">64 / day</span>
+              <span class="metric-label">Trajectory samples, uniform sunrise to sunset (≈675 s spacing).</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">0 / 100%</span>
+              <span class="metric-label">Synthetic frames in evaluation; real frames in validation and test.</span>
+            </div>
+          </div>
+
+          <div class="callout" style="margin-top: 1.5rem" data-reveal>
+            <b>Reference result.</b> On an earlier run of the pipeline, geolocation fell below 0.5° latitude error on
+            35% of test days and below 0.5° longitude error on 68% of test days. Numbers for the three-regime
+            comparison above are being finalized for the manuscript.
           </div>
         </section>
       </main>
 
       <footer class="footer">
         <div class="footer-inner">
-          <span>Case study · Physics-informed polarization geolocalization</span>
-          <a href="../index.html">Return home</a>
+          <span>Case study · Skypol, sky-polarization geolocalization</span>
+          <a class="inline-link" href="../index.html">Return to portfolio</a>
         </div>
       </footer>
     </div>

@@ -3,16 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Parsa Riazi Bakhshayesh | Research Portfolio</title>
+    <title>Parsa Riazi Bakhshayesh — Research Portfolio</title>
     <meta
       name="description"
-      content="Research portfolio for Parsa Riazi Bakhshayesh across physics-informed AI, multimodal generation, robotics, and rehabilitation intelligence."
+      content="PhD researcher at UIUC working on physics-informed learning for sky-polarization geolocalization, multimodal medical generation, robot perception, and wearable sensing."
     />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&amp;family=Source+Serif+4:wght@600;700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -26,9 +26,10 @@
             <span>Parsa Riazi Bakhshayesh</span>
           </a>
           <nav class="nav-links" aria-label="Primary">
-            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#skypol">Skypol</a>
             <a href="#work">Projects</a>
-            <a href="#papers">Papers</a>
+            <a href="#papers">Publications</a>
             <a href="#teaching">Teaching</a>
             <a href="#contact">Contact</a>
           </nav>
@@ -36,133 +37,233 @@
       </header>
 
       <main>
+        <!-- ================================================== hero -->
         <section class="hero">
           <div class="hero-grid">
             <div class="hero-copy" data-reveal>
-              <p class="eyebrow">UIUC · PhD Researcher</p>
-              <h1>Researching AI systems that stay grounded in physics, signal quality, and real-world use.</h1>
+              <p class="eyebrow">PhD Researcher · University of Illinois Urbana-Champaign</p>
+              <h1>Physics-informed learning for perception systems that have to work outdoors.</h1>
               <p class="lead">
-                I build multimodal and embodied intelligence systems at the intersection of physics-informed learning,
-                computer vision, robotics, and healthcare AI. My recent work spans polarization-based geolocalization,
-                medical image synthesis, robot-assisted perception, and wearable rehabilitation intelligence.
+                My current work asks how far a camera can get toward knowing <em>where</em> it is from the
+                polarization of the sky alone. The core problem is data: real polarimetric sky captures are
+                expensive and geographically narrow, while the underlying optics are highly structured. I use that
+                structure to synthesize training data, then evaluate under day-held-out protocols that keep the
+                synthetic distribution out of validation and test entirely.
               </p>
-              <div class="button-row" style="margin-top: 1.5rem">
-                <a class="button primary" href="#work">Explore projects</a>
-                <a class="button secondary" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Open resume</a>
+              <p class="lead">
+                Earlier threads run through multimodal clinical generation, robot visual servoing, and IMU-based
+                rehabilitation intelligence — all variations on the same interest in models that survive contact
+                with real sensors.
+              </p>
+              <div class="button-row" style="margin-top: 1.75rem">
+                <a class="button primary" href="#skypol">Current research</a>
+                <a class="button" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Curriculum vitae</a>
                 <a class="button ghost" href="mailto:parsa.riazi1998@gmail.com">Email</a>
+                <a class="button ghost" href="https://scholar.google.com/citations?hl=en&amp;user=Dj5_Os8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Google&nbsp;Scholar</a>
                 <a class="button ghost" href="https://www.linkedin.com/in/parsa-riazi-bakhshayesh/" target="_blank" rel="noreferrer">LinkedIn</a>
-                <a class="button ghost" href="https://scholar.google.com/citations?hl=en&amp;user=Dj5_Os8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Scholar</a>
-              </div>
-              <div class="hero-notes">
-                <div class="note-pill">
-                  <strong>Core themes</strong>
-                  <span>Physics-informed AI, multimodal generation, robot perception, wearable sensing, and sequence modeling.</span>
-                </div>
-                <div class="note-pill">
-                  <strong>Working style</strong>
-                  <span>Systems-first research with a strong bias toward deployment realism, evaluation, and data quality.</span>
-                </div>
               </div>
             </div>
 
             <aside class="hero-panel" data-reveal>
-              <p class="eyebrow">Snapshot</p>
+              <p class="eyebrow">At a glance</p>
               <div class="hero-stats">
                 <div class="stat-pill">
-                  <strong>750k+</strong>
-                  <span>Polarization images used for synthetic augmentation and geolocation modeling.</span>
+                  <strong>Skypol</strong>
+                  <span>Sky-polarization geolocalization, BioSensors Lab — advised by Prof. David Forsyth.</span>
                 </div>
                 <div class="stat-pill">
-                  <strong>65 activities</strong>
-                  <span>Modeled in rehabilitation-focused activity recognition pipelines.</span>
+                  <strong>~750k</strong>
+                  <span>Polarization frames across simulated, sensor-emulated, and real campaign data.</span>
                 </div>
                 <div class="stat-pill">
-                  <strong>4 publications</strong>
-                  <span>Integrated into the site as evidence-backed project stories.</span>
+                  <strong>4</strong>
+                  <span>Peer-reviewed publications in rehabilitation sensing and activity recognition.</span>
                 </div>
                 <div class="stat-pill">
-                  <strong>UR5 + multi-camera rigs</strong>
-                  <span>Hands-on robotics calibration and real-time visual servoing experience.</span>
+                  <strong>Champaign, IL</strong>
+                  <span>
+                    <a class="inline-link" href="mailto:parsa.riazi1998@gmail.com">parsa.riazi1998@gmail.com</a><br />
+                    <a class="inline-link" href="mailto:parsa2@illinois.edu">parsa2@illinois.edu</a>
+                  </span>
                 </div>
-              </div>
-              <div class="summary-box" style="margin-top: 1rem">
-                <p>
-                  Personal email: <a class="inline-link" href="mailto:parsa.riazi1998@gmail.com">parsa.riazi1998@gmail.com</a>
-                  <br />
-                  Institutional email: <a class="inline-link" href="mailto:parsa2@illinois.edu">parsa2@illinois.edu</a>
-                </p>
               </div>
             </aside>
           </div>
         </section>
 
-        <section class="section" id="about">
+        <!-- ============================================== research -->
+        <section class="section" id="research">
           <div class="section-header" data-reveal>
-            <div>
-              <p class="eyebrow">About</p>
-              <h2 class="section-title">A research profile built around systems that have to work outside the lab.</h2>
-              <p class="section-intro">
-                My research sits between modeling and execution: I care about architectures, but just as much about
-                sensor placement, calibration, data realism, and whether the final system behaves under real constraints.
-              </p>
-            </div>
+            <p class="eyebrow">Research interests</p>
+            <h2 class="section-title">Three questions I keep returning to.</h2>
           </div>
           <div class="focus-grid">
             <article class="focus-card" data-reveal>
-              <h3 class="card-title">Physics-informed modeling</h3>
-              <p class="card-copy">I use domain structure to improve learning, especially when data is expensive to collect at scale.</p>
+              <h3 class="card-title">Physics as a data prior</h3>
+              <p class="card-copy">
+                When measurements are scarce but the forward model is known, simulation is not a fallback — it is a
+                way of encoding the prior. The open question is how to close the remaining sensor gap without
+                leaking synthetic structure into evaluation.
+              </p>
             </article>
             <article class="focus-card" data-reveal>
-              <h3 class="card-title">Multimodal generation</h3>
-              <p class="card-copy">My generative work ties together structured patient state, graph modeling, and image synthesis.</p>
+              <h3 class="card-title">Honest evaluation protocols</h3>
+              <p class="card-copy">
+                Most of the difficulty in outdoor sensing is in the split, not the architecture. I design
+                day-held-out and site-held-out protocols so that reported gains reflect generalization rather than
+                temporal correlation.
+              </p>
             </article>
             <article class="focus-card" data-reveal>
-              <h3 class="card-title">Embodied perception</h3>
-              <p class="card-copy">I enjoy the systems layer too: robot vision, filtering, calibration, and sensor fusion in real-world loops.</p>
+              <h3 class="card-title">Embodied and clinical sensing</h3>
+              <p class="card-copy">
+                Robot visual servoing, wearable IMU arrays, and multimodal patient records all impose constraints
+                before the model is chosen: sensor placement, calibration, latency, and patient burden.
+              </p>
             </article>
           </div>
         </section>
 
-        <section class="section" id="work">
+        <!-- ================================================ skypol -->
+        <section class="section" id="skypol">
           <div class="section-header" data-reveal>
-            <div>
-              <p class="eyebrow">Featured Work</p>
-              <h2 class="section-title">Case studies with custom visuals and clearer technical storytelling.</h2>
-              <p class="section-intro">
-                Each project opens into a dedicated page, so the portfolio reads like a curated research narrative
-                rather than a flat resume.
+            <p class="eyebrow">Current research · BioSensors Lab · Aug 2025 – present</p>
+            <h2 class="section-title">Skypol: geolocalization from the polarization pattern of the sky.</h2>
+            <p class="section-intro">
+              A single polarimetric image of the sky encodes the sun's position through the Rayleigh scattering
+              geometry, and the sun's position over a day encodes latitude and longitude. Skypol turns that chain
+              into a learning problem, and spends most of its effort on the part that usually decides the outcome:
+              where the training data comes from and how the test set is held out.
+            </p>
+          </div>
+
+          <figure class="figure figure-wide" data-reveal>
+            <img
+              src="assets/skypol/skypol-workflow.png"
+              alt="Skypol pipeline: spherical-triangle sampling of observer locations, Rayleigh angle-of-polarization simulation, sensor-faithful emulation against real captures, day-held-out split of the real campaign, and three training regimes evaluated on identical real validation and test days."
+            />
+            <figcaption>
+              <b>Figure 1.</b> End-to-end project workflow. Observer locations are drawn inside a spherical triangle
+              that surrounds a held-out target site (Step 1); a Rayleigh simulator maps date, time, and location to
+              angle-of-polarization and degree-of-polarization fields (Step 2.1); simulated frames are matched to real
+              captures by zenith band and angular separation, then rotated by the residual azimuth so they carry real
+              sensor texture with simulated heading (Step 2.2); the real campaign is split into chronological day
+              blocks with no day leakage (Step 4); and three training regimes are scored on identical real validation
+              and test days (Step 5).
+            </figcaption>
+          </figure>
+
+          <div class="detail-grid" style="margin-top: 2.5rem">
+            <div data-reveal>
+              <h3 class="card-title" style="font-size: 1.15rem">Why the data pipeline is the contribution</h3>
+              <p class="section-intro" style="margin-top: 0.6rem">
+                A physics simulator produces clean angle-of-polarization fields that are correct in geometry and
+                wrong in everything else — noise, vignetting, saturation near the zenith, sensor response. Training
+                on them alone transfers poorly. The emulation stage closes that gap without inventing data: each
+                simulated frame is paired with a <em>real</em> capture at a comparable solar zenith, ranked by
+                angular separation, and the real frame is rotated by the residual azimuth so its texture is
+                preserved while its heading matches the simulated geometry.
               </p>
+              <ul class="summary-list">
+                <li>
+                  <b>Spherical-triangle sampling.</b> Observers are drawn inside a geodesic triangle around the
+                  target site; the target itself is never simulated, so the model is asked to interpolate to a
+                  location it has not seen.
+                </li>
+                <li>
+                  <b>Trajectory supervision.</b> Each day is represented by 64 samples spaced uniformly from sunrise
+                  to sunset (≈675 s apart), so the network sees a full solar arc rather than isolated frames.
+                </li>
+                <li>
+                  <b>Great-circle loss.</b> The location head emits raw <span style="font-family: var(--mono)">xyz</span>,
+                  normalizes it to the unit sphere, and is trained with a cosine embedding loss — the loss angle is
+                  the great-circle position error directly, with no latitude/longitude parameterization artifacts.
+                </li>
+                <li>
+                  <b>Heading as an auxiliary signal.</b> Adding heading to the trajectory predictor reduced error in
+                  both simulation and real data; a separate head is trained with MSE on cos(zenith).
+                </li>
+              </ul>
+            </div>
+            <aside class="sidebar-stack" data-reveal>
+              <div class="sidebar-card">
+                <h3>Pipeline</h3>
+                <ul class="mini-list">
+                  <li>Vision Transformer over polarization frames for solar-elevation trajectory prediction.</li>
+                  <li>Two-stage PointTransformer for geolocation regression from the predicted trajectory.</li>
+                  <li>Rayleigh forward model for angle- and degree-of-polarization synthesis.</li>
+                  <li>Zenith-band matching and azimuth rotation for sensor-faithful emulation.</li>
+                </ul>
+              </div>
+              <div class="sidebar-card">
+                <h3>Protocol</h3>
+                <ul class="mini-list">
+                  <li>Real campaign days Jul 1 – Aug 29, held out in chronological blocks.</li>
+                  <li>≈40% train / 30% validation / 30% test, with no day appearing in two splits.</li>
+                  <li>Synthetic and emulated rows are retained only on real training days.</li>
+                  <li>Validation and test contain real data exclusively.</li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+
+          <div class="figure-row figure-row-3" data-reveal>
+            <figure class="figure figure-pad">
+              <img src="assets/skypol/skypol-triangle.png" alt="Map of simulated observer locations distributed inside a spherical triangle, with the target site marked and excluded from simulation." />
+              <figcaption><b>Step 1.</b> Observers sampled inside the triangle; the target site is excluded.</figcaption>
+            </figure>
+            <figure class="figure figure-pad">
+              <img src="assets/skypol/skypol-sim-aop.png" alt="Simulated angle-of-polarization field rendered as a hemispherical disk with smooth colour gradients." />
+              <figcaption><b>Step 2.1.</b> Rayleigh angle-of-polarization field for a given date, time, and site.</figcaption>
+            </figure>
+            <figure class="figure figure-pad">
+              <img src="assets/skypol/skypol-emulation.png" alt="Simulated angle-of-polarization disk matched against three real captures and converted into an emulated frame carrying real sensor texture with simulated heading." />
+              <figcaption><b>Step 2.2.</b> Matched real captures yield an emulated frame: real texture, simulated heading.</figcaption>
+            </figure>
+          </div>
+
+          <figure class="figure figure-wide figure-pad" data-reveal>
+            <img src="assets/skypol/skypol-split.png" alt="Timeline of real campaign days split into chronological train, validation, and test blocks with no day leakage." />
+            <figcaption>
+              <b>Figure 2.</b> Day-held-out split. Because consecutive frames within a day are strongly correlated,
+              splitting at the frame level inflates results; splitting at the day level and ordering the blocks
+              chronologically measures forward generalization instead.
+            </figcaption>
+          </figure>
+
+          <div class="metric-grid" style="margin-top: 2.5rem" data-reveal>
+            <div class="metric-card">
+              <span class="metric-value">3</span>
+              <span class="metric-label">Training regimes — real-only, simulation + real, emulation + real — scored on one shared evaluation set.</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">64 / day</span>
+              <span class="metric-label">Trajectory samples, uniform sunrise to sunset (≈675 s spacing).</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">~750k</span>
+              <span class="metric-label">Polarization frames across simulated, emulated, and real sources.</span>
             </div>
           </div>
 
-          <div class="project-list">
-            <article class="project-card" data-reveal>
-              <div class="project-copy">
-                <p class="eyebrow">Ongoing research · BioSensors Lab</p>
-                <h3>Physics-informed polarization geolocalization</h3>
-                <p>A synthetic-data and hierarchical learning pipeline for predicting solar-elevation trajectories and regressing geolocation from polarization imagery.</p>
-                <ul>
-                  <li>Models solar-elevation dependencies instead of relying on generic augmentation.</li>
-                  <li>Combines a Vision Transformer with a two-stage PointTransformer.</li>
-                  <li>Evaluates against strict sub-degree thresholds across test days.</li>
-                </ul>
-                <div class="project-links">
-                  <a class="button secondary" href="projects/polarization.html">Read case study</a>
-                </div>
-              </div>
-              <div class="project-visual visual-polarization" aria-hidden="true">
-                <div class="visual-grid"></div>
-                <div class="sun"></div>
-                <div class="orbit"></div>
-                <div class="wave one"></div>
-                <div class="wave two"></div>
-                <div class="wave three"></div>
-                <div class="pin"></div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Physics prior</div>
-              </div>
-            </article>
+          <div class="button-row" style="margin-top: 2rem" data-reveal>
+            <a class="button primary" href="projects/polarization.html">Read the full case study</a>
+          </div>
+        </section>
 
-            <article class="project-card" data-reveal>
+        <!-- ============================================== projects -->
+        <section class="section" id="work">
+          <div class="section-header" data-reveal>
+            <p class="eyebrow">Earlier work</p>
+            <h2 class="section-title">Projects before Skypol.</h2>
+            <p class="section-intro">
+              Each opens into a dedicated case study page with the figures and results from the underlying report
+              or paper.
+            </p>
+          </div>
+
+          <div class="project-list">
+            <article class="project-card no-visual" data-reveal>
               <div class="project-copy">
                 <p class="eyebrow">SUNLAB · 2025</p>
                 <h3>Multi-modal synthetic EHR with medical image generation</h3>
@@ -173,17 +274,8 @@
                   <li>Designed around Digital Twin and External Control Arm use cases.</li>
                 </ul>
                 <div class="project-links">
-                  <a class="button secondary" href="projects/ehr-diffusion.html">Read case study</a>
+                  <a class="button" href="projects/ehr-diffusion.html">Read case study</a>
                 </div>
-              </div>
-              <div class="project-visual visual-ehr" aria-hidden="true">
-                <div class="visual-grid"></div>
-                <div class="diffusion-core"></div>
-                <div class="scan-grid"></div>
-                <div class="patient-graph">
-                  <span></span><span></span><span></span><span></span>
-                </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Conditioned synthesis</div>
               </div>
             </article>
 
@@ -198,52 +290,39 @@
                   <li>Exposed half-face poses as the hardest regime before integration into the broader UR5 visual servoing stack.</li>
                 </ul>
                 <div class="project-links">
-                  <a class="button secondary" href="projects/head-pose.html">Read case study</a>
+                  <a class="button" href="projects/head-pose.html">Read case study</a>
                 </div>
               </div>
-              <div class="project-visual visual-paper-figure" aria-hidden="true">
-                <div class="visual-grid"></div>
+              <div class="project-visual visual-paper-figure">
                 <div class="figure-frame">
                   <img src="assets/paper-figures/headpose-landmarks.png" alt="Selected facial landmarks from the head pose term project report" />
                 </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">CV report figure</div>
-                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
+                <div class="visual-card">
                   <strong>Selective landmarks</strong>
                   <span>Outer eye corners, nose tip, and nasion were chosen as the stable feature set for filtering.</span>
                 </div>
               </div>
             </article>
 
-            <article class="project-card" data-reveal>
+            <article class="project-card no-visual" data-reveal>
               <div class="project-copy">
                 <p class="eyebrow">Sharif University of Technology · Journal paper</p>
                 <h3>IMU-based telerehabilitation system design</h3>
-                <p>The rehab thread now starts with the journal paper: a full system-design study for Parkinson's telerehabilitation that minimizes patient burden while preserving clinically useful recognition.</p>
+                <p>A full system-design study for Parkinson's telerehabilitation that minimizes patient burden while preserving clinically useful recognition.</p>
                 <ul>
                   <li>Optimized a 10-IMU setup down to a left thigh and left forearm pair.</li>
                   <li>Reached 95% recall on healthy-subject data and maintained above 80% after patient adaptation.</li>
                   <li>Structured the pipeline explicitly as data acquisition, optimal HAR design, and one-session PD adaptation.</li>
                 </ul>
                 <div class="project-links">
-                  <a class="button secondary" href="projects/rehab-intelligence.html#journal-paper">Read journal paper section</a>
-                </div>
-              </div>
-              <div class="project-visual visual-paper-figure" aria-hidden="true">
-                <div class="visual-grid"></div>
-                <div class="figure-frame">
-                  <img src="assets/paper-figures/telerehab-workflow.png" alt="Workflow figure from the telerehabilitation journal paper" />
-                </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Journal workflow</div>
-                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
-                  <strong>Main figure</strong>
-                  <span>Figure-derived workflow showing how the HAR system is designed and then adapted for PD patients.</span>
+                  <a class="button" href="projects/rehab-intelligence.html#journal-paper">Read case study</a>
                 </div>
               </div>
             </article>
 
             <article class="project-card" data-reveal>
               <div class="project-copy">
-                <p class="eyebrow">Sharif University of Technology · Augmentation papers</p>
+                <p class="eyebrow">Sharif University of Technology · Augmentation studies</p>
                 <h3>Rehabilitation data augmentation studies</h3>
                 <p>Two companion studies test augmentation from both sides: whether it improves HAR performance and whether the generated rehab motion still looks natural to experts.</p>
                 <ul>
@@ -252,113 +331,122 @@
                   <li>Showed there is no one best augmentation method across all activity types, especially for dynamic walking tasks.</li>
                 </ul>
                 <div class="project-links">
-                  <a class="button secondary" href="projects/rehab-intelligence.html#augmentation-papers">Read augmentation section</a>
+                  <a class="button" href="projects/rehab-intelligence.html#augmentation-papers">Read case study</a>
                 </div>
               </div>
-              <div class="project-visual visual-paper-figure" aria-hidden="true">
-                <div class="visual-grid"></div>
+              <div class="project-visual visual-paper-figure">
                 <div class="figure-frame">
                   <img src="assets/paper-figures/augmentation-summary.png" alt="Result figure from the rehabilitation data augmentation paper" />
                 </div>
-                <div class="panel-label" style="top: 1.2rem; left: 1.2rem">Augmentation evidence</div>
-                <div class="visual-card" style="left: 1.4rem; bottom: 1.4rem">
-                  <strong>Main figure</strong>
-                  <span>Representative figure from the augmentation study comparing perceived similarity and useful variation.</span>
+                <div class="visual-card">
+                  <strong>Augmentation evidence</strong>
+                  <span>Comparing perceived similarity against useful variation across activity types.</span>
                 </div>
               </div>
             </article>
           </div>
         </section>
 
+        <!-- ========================================== publications -->
         <section class="section" id="papers">
           <div class="section-header" data-reveal>
-            <div>
-              <p class="eyebrow">Selected Publications</p>
-              <h2 class="section-title">The rehab portfolio is now split into the journal paper, the augmentation studies, and a related modeling extension.</h2>
-            </div>
+            <p class="eyebrow">Publications</p>
+            <h2 class="section-title">Peer-reviewed work.</h2>
+            <p class="section-intro">
+              Full list and citation counts on
+              <a class="inline-link" href="https://scholar.google.com/citations?hl=en&amp;user=Dj5_Os8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar</a>.
+            </p>
           </div>
           <div class="publication-grid">
             <article class="paper-card" data-reveal>
+              <p class="paper-meta">Medical Engineering &amp; Physics · 2022</p>
               <h3 class="card-title">A new scheme for the development of IMU-based activity recognition systems for telerehabilitation</h3>
               <p>A design strategy for minimizing patient burden while preserving performance in PD rehabilitation settings.</p>
-              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1016/j.medengphy.2022.103876" target="_blank" rel="noreferrer">DOI</a></div>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1016/j.medengphy.2022.103876" target="_blank" rel="noreferrer">doi.org/10.1016/j.medengphy.2022.103876</a></div>
             </article>
             <article class="paper-card" data-reveal>
+              <p class="paper-meta">ICSPIS · 2022</p>
               <h3 class="card-title">The Effects of Data Augmentation Methods on the Performance of Human Activity Recognition</h3>
               <p>A direct comparison of six augmentation methods for time-series HAR with ConvLSTM.</p>
-              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043959" target="_blank" rel="noreferrer">DOI</a></div>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043959" target="_blank" rel="noreferrer">doi.org/10.1109/ICSPIS56952.2022.10043959</a></div>
             </article>
             <article class="paper-card" data-reveal>
-              <h3 class="card-title">Data Augmentation in Mobility Rehab Exercises of PD Patients</h3>
-              <p>Evaluates augmented motion realism with a 3D body model and expert grading.</p>
-              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICRoM54204.2021.9663507" target="_blank" rel="noreferrer">DOI</a></div>
-            </article>
-            <article class="paper-card" data-reveal>
+              <p class="paper-meta">ICSPIS · 2022</p>
               <h3 class="card-title">Accuracy improvement in simple and complex Human Activity Recognition using a CNN-BiLSTM multi-task deep neural network</h3>
               <p>A shared representation model that improves recognition for both simple and complex activities.</p>
-              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043933" target="_blank" rel="noreferrer">DOI</a></div>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICSPIS56952.2022.10043933" target="_blank" rel="noreferrer">doi.org/10.1109/ICSPIS56952.2022.10043933</a></div>
+            </article>
+            <article class="paper-card" data-reveal>
+              <p class="paper-meta">ICRoM · 2021</p>
+              <h3 class="card-title">Data Augmentation in Mobility Rehab Exercises of PD Patients</h3>
+              <p>Evaluates augmented motion realism with a 3D body model and expert grading.</p>
+              <div class="paper-links"><a class="inline-link" href="https://doi.org/10.1109/ICRoM54204.2021.9663507" target="_blank" rel="noreferrer">doi.org/10.1109/ICRoM54204.2021.9663507</a></div>
             </article>
           </div>
         </section>
 
+        <!-- ============================================== teaching -->
         <section class="section" id="teaching">
           <div class="section-header" data-reveal>
-            <div>
-              <p class="eyebrow">Teaching &amp; Mentoring</p>
-              <h2 class="section-title">A second thread running alongside the research.</h2>
-            </div>
+            <p class="eyebrow">Teaching</p>
+            <h2 class="section-title">Teaching assistantships.</h2>
           </div>
-          <div class="card" data-reveal>
-            <div class="timeline">
-              <div class="timeline-item">
-                <div class="timeline-time">Fall 2025</div>
-                <div class="timeline-body"><h3>Teaching Assistant · Introductory Dynamics</h3><p>Worked with Prof. Matthew West at UIUC.</p></div>
+          <div class="timeline" data-reveal>
+            <div class="timeline-item">
+              <div class="timeline-time">Fall 2025</div>
+              <div class="timeline-body">
+                <h3>Introductory Dynamics · UIUC</h3>
+                <p>With Prof. Matthew West.</p>
               </div>
-              <div class="timeline-item">
-                <div class="timeline-time">Spring 2025</div>
-                <div class="timeline-body"><h3>Teaching Assistant · Engineering and Scientific Application of Deep Learning</h3><p>Supported Prof. Elif Ertekin at UIUC.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">Spring 2025</div>
+              <div class="timeline-body">
+                <h3>Engineering and Scientific Applications of Deep Learning · UIUC</h3>
+                <p>With Prof. Elif Ertekin.</p>
               </div>
-              <div class="timeline-item">
-                <div class="timeline-time">Fall 2022</div>
-                <div class="timeline-body"><h3>Teaching Assistant · Applied Machine Learning</h3><p>Supported course delivery at Sharif University of Technology.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">Fall 2022</div>
+              <div class="timeline-body">
+                <h3>Applied Machine Learning · Sharif University of Technology</h3>
+                <p>Course delivery and student support.</p>
               </div>
-              <div class="timeline-item">
-                <div class="timeline-time">Fall 2020</div>
-                <div class="timeline-body"><h3>Teaching Assistant · Robotics</h3><p>Assisted Prof. Saeed Behzadipour while building out a stronger robotics foundation.</p></div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-time">Fall 2020</div>
+              <div class="timeline-body">
+                <h3>Robotics · Sharif University of Technology</h3>
+                <p>With Prof. Saeed Behzadipour.</p>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- =============================================== contact -->
         <section class="cta-band" id="contact" data-reveal>
           <p class="eyebrow">Contact</p>
-          <h2>Open to research collaborations that need both modeling depth and system-level execution.</h2>
-          <p class="lead" style="margin-top: 0.8rem">
-            Personal email is preferred for outreach, while my UIUC address remains available as an institutional contact.
+          <h2>Open to collaborations in physics-informed perception and outdoor sensing.</h2>
+          <p class="lead" style="margin-top: 1rem">
+            Personal email is preferred for outreach; my UIUC address is available as an institutional contact.
           </p>
-          <div class="summary-box" style="margin-top: 1rem">
-            <p>
-              Personal: <a class="inline-link" href="mailto:parsa.riazi1998@gmail.com">parsa.riazi1998@gmail.com</a>
-              <br />
-              Institutional: <a class="inline-link" href="mailto:parsa2@illinois.edu">parsa2@illinois.edu</a>
-            </p>
-          </div>
-          <div class="button-row" style="margin-top: 1.2rem">
-            <a class="button primary" href="mailto:parsa.riazi1998@gmail.com">Personal email</a>
-            <a class="button ghost" href="https://www.linkedin.com/in/parsa-riazi-bakhshayesh/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <div class="button-row" style="margin-top: 1.5rem">
+            <a class="button primary" href="mailto:parsa.riazi1998@gmail.com">parsa.riazi1998@gmail.com</a>
+            <a class="button" href="mailto:parsa2@illinois.edu">parsa2@illinois.edu</a>
+            <a class="button" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Curriculum vitae</a>
             <a class="button ghost" href="https://scholar.google.com/citations?hl=en&amp;user=Dj5_Os8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Google Scholar</a>
-            <a class="button secondary" href="assets/Parsa_Riazi_Bakhshayesh_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+            <a class="button ghost" href="https://www.linkedin.com/in/parsa-riazi-bakhshayesh/" target="_blank" rel="noreferrer">LinkedIn</a>
           </div>
         </section>
       </main>
 
       <footer class="footer">
         <div class="footer-inner">
-          <span>Parsa Riazi Bakhshayesh · Champaign, IL</span>
+          <span>Parsa Riazi Bakhshayesh · University of Illinois Urbana-Champaign</span>
           <span>
-            <a class="inline-link" href="https://www.linkedin.com/in/parsa-riazi-bakhshayesh/" target="_blank" rel="noreferrer">LinkedIn</a>
-            ·
             <a class="inline-link" href="https://scholar.google.com/citations?hl=en&amp;user=Dj5_Os8AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noreferrer">Scholar</a>
+            ·
+            <a class="inline-link" href="https://www.linkedin.com/in/parsa-riazi-bakhshayesh/" target="_blank" rel="noreferrer">LinkedIn</a>
           </span>
         </div>
       </footer>
